@@ -15,7 +15,11 @@ export const inputSlice = createSlice({
             state.value -= 1
         },
         updateValue: (state, action) => {
-            state.value = action.payload
+
+
+                state.value = action.payload
+
+
         }
     }
 })
