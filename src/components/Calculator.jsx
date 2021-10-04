@@ -11,10 +11,6 @@ export const Calculator = () => {
             dispatch(updateValue(e.target.value));
         }
 
-
-
-
-
     return (
 
         <div>

@@ -1,5 +1,6 @@
 
 import {Button} from "./Button";
+import {BackButton} from "./BackButton";
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -10,7 +11,7 @@ export const Keyboard = () => {
             {
                 numbers.map(number => <Button number={number} key={number} />)
             }
-
+<BackButton/>
         </>
     )
 
