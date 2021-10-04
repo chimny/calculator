@@ -8,24 +8,19 @@ export const inputSlice = createSlice({
     name: 'calcInput',
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1
-        },
-        decrement: (state) => {
-            state.value -= 1
-        },
         updateValue: (state, action) => {
-
-
-                state.value = action.payload
-
-
+            const newInput = Number(action.payload);
+            if (!Number.isNaN(newInput)) {
+                state.value = action.payload;
+            }
+        }, addNumber : (state,action)=>{
+            state.value += String(action.payload)
         }
     }
 })
 
 
-export const {increment, decrement, updateValue} = inputSlice.actions;
+export const {updateValue,addNumber} = inputSlice.actions;
 
 export default inputSlice.reducer;
 
