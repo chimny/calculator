@@ -13,7 +13,7 @@ export const calculationSlice = createSlice({
     reducers: {
         //@todo update operator regarding if it's empty or not
         addElement: (state, action) => {
-            const prevState = {...state}
+            // const prevState = {...state}
 
         }
     }
