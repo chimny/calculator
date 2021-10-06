@@ -21,13 +21,13 @@ export const inputSlice = createSlice({
             state.value = prevState.slice(0, prevState.length - 1)
         },
         clearValue: (state) => {
-            state.value = null;
+            state.value = '';
         }
     }
 })
 
 
-export const {updateValue, addNumber, removeNumber} = inputSlice.actions;
+export const {updateValue, addNumber, removeNumber,clearValue} = inputSlice.actions;
 
 export default inputSlice.reducer;
 

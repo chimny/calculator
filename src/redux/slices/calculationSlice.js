@@ -11,7 +11,6 @@ export const calculationSlice = createSlice({
     name: 'calculationSlice',
     initialState,
     reducers: {
-        //@todo update operator regarding if it's empty or not
         addElement: (state, action) => {
             if (state.firstNumber === 'null') {
                 state.firstNumber = action.payload
