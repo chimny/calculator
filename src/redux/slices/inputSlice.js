@@ -20,6 +20,9 @@ export const inputSlice = createSlice({
             const prevState = state.value;
             state.value = prevState.slice(0, prevState.length - 1)
         },
+        clearValue: (state) => {
+            state.value = null;
+        }
     }
 })
 
