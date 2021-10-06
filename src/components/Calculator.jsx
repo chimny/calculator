@@ -8,11 +8,11 @@ export const Calculator = () => {
     //input value below
     const inputValue = useSelector((state => state.inputValue.value));
     //data from the operations
-    const {firstNumber,operator,secondNumber} = useSelector((state => state.operationSequence));
+    const {firstNumber, operator, secondNumber} = useSelector((state => state.operationSequence));
 
     const updateFunction = (e) => {
-            dispatch(updateValue(e.target.value));
-        }
+        dispatch(updateValue(e.target.value));
+    }
 
     return (
 

@@ -1,9 +1,9 @@
-import {Button} from "./Button";
-import {BackButton} from "./BackButton";
-import {CalculationButton} from "./CalculationButton";
+import {Button} from "./buttons/Button";
+import {BackButton} from "./buttons/BackButton";
+import {CalculationButton} from "./buttons/CalculationButton";
 
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-const symbols = ['*','/','+','-']
+const symbols = ['*', '/', '+', '-']
 export const Keyboard = () => {
 
     return (

@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
-import {addElement} from '../redux/slices/calculationSlice'
-import {clearValue} from '../redux/slices/inputSlice'
+import {addElement} from '../../redux/slices/calculationSlice'
+import {clearValue} from '../../redux/slices/inputSlice'
 
 export const CalculationButton = (props) => {
     const inputValue = useSelector((state => state.inputValue.value));

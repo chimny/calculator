@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {removeNumber} from '../redux/slices/inputSlice'
+import {removeNumber} from '../../redux/slices/inputSlice'
 
 export const BackButton = () => {
     const dispatch = useDispatch();
