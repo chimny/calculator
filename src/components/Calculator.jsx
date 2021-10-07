@@ -17,7 +17,7 @@ export const Calculator = () => {
     return (
 
         <div>
-            <input type="text" value={inputValue} onChange={updateFunction}/>
+            <input  value={inputValue} onChange={updateFunction}/>
             <br/>
             <Keyboard/>
             {/*below calculation state for preview purposes*/}

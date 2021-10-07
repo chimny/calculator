@@ -13,7 +13,8 @@ export const inputSlice = createSlice({
             if (!Number.isNaN(newInput)) {
                 state.value = action.payload;
             }
-        }, addNumber: (state, action) => {
+        },
+        addNumber: (state, action) => {
             state.value += String(action.payload)
         },
         removeNumber: (state) => {
@@ -27,7 +28,7 @@ export const inputSlice = createSlice({
 })
 
 
-export const {updateValue, addNumber, removeNumber,clearValue} = inputSlice.actions;
+export const {updateValue, addNumber, removeNumber, clearValue} = inputSlice.actions;
 
 export default inputSlice.reducer;
 
