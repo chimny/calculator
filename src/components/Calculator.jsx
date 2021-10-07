@@ -8,7 +8,7 @@ export const Calculator = () => {
     //input value below
     const inputValue = useSelector((state => state.inputValue.value));
     //data from the operations
-    const {firstNumber, operator, secondNumber} = useSelector((state => state.operationSequence));
+    const {firstNumber, operator, secondNumber, result} = useSelector((state => state.operationSequence));
 
     const updateFunction = (e) => {
         dispatch(updateValue(e.target.value));
@@ -23,6 +23,8 @@ export const Calculator = () => {
             {/*below calculation state for preview purposes*/}
             <br/>
             {firstNumber} {operator} {secondNumber}
+            <br/>
+            <h1>{result}</h1>
         </div>
 
     )
