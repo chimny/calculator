@@ -28,19 +28,15 @@ export const calculationSlice = createSlice({
                 const secondNumberEnc = Number(secondNumber);
                 switch (operator) {
                     case '+':
-                        // state.firstNumber = state.result;
                         state.result = firstNumberEnc + secondNumberEnc;
                         break;
                     case '-':
-                        state.firstNumber = state.result;
                         state.result = firstNumberEnc - secondNumberEnc;
                         break;
                     case '*':
-                        state.firstNumber = state.result;
                         state.result = firstNumberEnc * secondNumberEnc;
                         break;
                     case '/':
-                        state.firstNumber = state.result;
                         state.result = firstNumberEnc / secondNumberEnc;
                         break;
                     default:
