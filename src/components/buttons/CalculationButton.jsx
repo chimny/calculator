@@ -9,11 +9,11 @@ export const CalculationButton = (props) => {
 
 
     function updateInput() {
-        if (secondNumber && props.symbol === '=') {
-            dispatch(operationSymbols())
+        if (props.symbol === '=') {
+            dispatch(operationSymbols(inputValue))
         }
+        dispatch(addOperator(props.symbol));
         dispatch(numberCalcValue(inputValue));
-        dispatch(addOperator(props.symbol))
         dispatch(clearValue());
 
     }

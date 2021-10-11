@@ -1,9 +1,13 @@
 import {createSlice} from "@reduxjs/toolkit";
 
+
+
+
+
 const initialState = {
-    firstNumber: "12",
-    operator: "+",
-    secondNumber: "4",
+    firstNumber: null,
+    operator: null,
+    secondNumber: null,
     result: null,
 };
 
@@ -22,12 +26,15 @@ export const calculationSlice = createSlice({
             if (action.payload === "=") return;
             state.operator = action.payload;
         },
-        operationSymbols(state) {
+        operationSymbols(state,action) {
+            const inputValue = Number(action.payload);
             const {firstNumber, operator, secondNumber} = state;
             const firstNumberEnc = Number(firstNumber);
-            const secondNumberEnc = Number(secondNumber);
+            const secondNumberEnc = inputValue??Number(secondNumber);
             switch (operator) {
                 case "+":
+                   // @todo increment value when clicking equal button
+
                     state.result = firstNumberEnc + secondNumberEnc;
                     break;
                 case "-":
