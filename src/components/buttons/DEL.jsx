@@ -1,11 +1,11 @@
 import {useDispatch} from "react-redux";
 import {removeNumber} from '../../redux/slices/inputSlice'
 
-export const BackButton = () => {
+export const DEL = () => {
     const dispatch = useDispatch();
 
 
     return (
-        <button onClick={() => dispatch(removeNumber())}>Delete</button>
+        <button onClick={() => dispatch(removeNumber())}>DEL</button>
     )
 }

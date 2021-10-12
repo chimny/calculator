@@ -18,8 +18,7 @@ export const inputSlice = createSlice({
             state.value += String(action.payload)
         },
         removeNumber: (state) => {
-            const prevState = state.value;
-            state.value = prevState.slice(0, prevState.length - 1)
+            state.value = '';
         },
         clearValue: (state) => {
             state.value = '';

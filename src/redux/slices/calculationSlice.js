@@ -32,7 +32,7 @@ export const calculationSlice = createSlice({
             const {firstNumber, operator, result, secondNumber} = state;
             const firstNumberEnc = Number(firstNumber);
             let secondNumberEnc = inputValue;
-            if (result) {
+            if (result || result === 0) {
                 state.firstNumber = state.result;
                 secondNumberEnc = Number(secondNumber);
             }
@@ -53,10 +53,18 @@ export const calculationSlice = createSlice({
                     return;
             }
         },
+        resetOperation(state) {
+            return state = {
+                firstNumber: null,
+                operator: null,
+                secondNumber: null,
+                result: null,
+            }
+        }
 
     },
 });
 
-export const {numberCalcValue, addOperator, operationSymbols} =
+export const {numberCalcValue, addOperator, operationSymbols, resetOperation} =
     calculationSlice.actions;
 export default calculationSlice.reducer;
