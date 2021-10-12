@@ -1,9 +1,11 @@
 import {Keyboard} from "./Keyboard";
 import {useSelector, useDispatch} from "react-redux";
 import {updateValue} from "../redux/slices/inputSlice";
-
+import {StyledCalculator} from "../styles/StyledCalculator";
 
 export const Calculator = () => {
+
+
     const dispatch = useDispatch();
     //input value below
     const inputValue = useSelector((state => state.inputValue.value));
@@ -14,10 +16,12 @@ export const Calculator = () => {
         dispatch(updateValue(e.target.value));
     }
 
+    //@todo write function to react on keyboard typing
+
     return (
 
-        <div>
-            <input  value={inputValue} onChange={updateFunction}/>
+        <StyledCalculator>
+            <input value={inputValue} onChange={updateFunction}/>
             <br/>
             <Keyboard/>
             {/*below calculation state for preview purposes*/}
@@ -25,7 +29,7 @@ export const Calculator = () => {
             {firstNumber} {operator} {secondNumber}
             <br/>
             <h1>{result}</h1>
-        </div>
+        </StyledCalculator>
 
     )
 }
