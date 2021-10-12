@@ -4,7 +4,6 @@ import {clearValue} from '../../redux/slices/inputSlice';
 
 export const CalculationButton = (props) => {
     const inputValue = useSelector((state => state.inputValue.value));
-    const {firstNumber, operator, secondNumber} = useSelector((state => state.operationSequence));
     const dispatch = useDispatch();
 
 
@@ -15,8 +14,6 @@ export const CalculationButton = (props) => {
         if (props.symbol === '=') {
             dispatch(operationSymbols(inputValue))
         }
-
-
     }
 
     return (

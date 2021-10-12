@@ -13,12 +13,13 @@ export const calculationSlice = createSlice({
     initialState,
     reducers: {
         numberCalcValue(state, action) {
-            if (state.firstNumber === null) {
-                state.firstNumber = action.payload;
-            } else if (state.secondNumber === null) {
-                state.secondNumber = action.payload;
-            }
-            else{
+            if (action.payload) {
+                if (state.firstNumber === null) {
+                    state.firstNumber = action.payload;
+                } else {
+                    state.secondNumber = action.payload;
+                }
+            } else {
                 state.firstNumber = state.result;
             }
         },
@@ -26,19 +27,17 @@ export const calculationSlice = createSlice({
             if (action.payload === "=") return;
             state.operator = action.payload;
         },
-        operationSymbols(state,action) {
+        operationSymbols(state, action) {
             const inputValue = Number(action.payload);
             const {firstNumber, operator, result, secondNumber} = state;
-            let firstNumberEnc = Number(firstNumber);
+            const firstNumberEnc = Number(firstNumber);
             let secondNumberEnc = inputValue;
-            if(result){
+            if (result) {
                 state.firstNumber = state.result;
                 secondNumberEnc = Number(secondNumber);
             }
             switch (operator) {
                 case "+":
-                   // @todo increment value when clicking equal button
-                    console.log(secondNumberEnc);
                     state.result = firstNumberEnc + secondNumberEnc;
                     break;
                 case "-":
