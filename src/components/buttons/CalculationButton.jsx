@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
 import {numberCalcValue, addOperator, operationSymbols} from '../../redux/slices/calculationSlice';
-import {clearValue} from '../../redux/slices/inputSlice';
+import {clearValue, updateValue} from '../../redux/slices/inputSlice';
 
 export const CalculationButton = (props) => {
     const inputValue = useSelector((state => state.inputValue.value));
@@ -8,12 +8,17 @@ export const CalculationButton = (props) => {
 
 
     function updateInput() {
-        dispatch(numberCalcValue(inputValue));
-        dispatch(addOperator(props.symbol));
-        dispatch(clearValue());
-        if (props.symbol === '=') {
-            dispatch(operationSymbols(inputValue))
+        if (props.symbol === '.') {
+            dispatch(updateValue(props.symbol));
+        } else {
+            dispatch(numberCalcValue(inputValue));
+            dispatch(addOperator(props.symbol));
+            dispatch(clearValue());
+            if (props.symbol === '=') {
+                dispatch(operationSymbols(inputValue))
+            }
         }
+
     }
 
     return (

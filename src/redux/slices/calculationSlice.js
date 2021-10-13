@@ -50,7 +50,7 @@ export const calculationSlice = createSlice({
                     state.result = firstNumberEnc / secondNumberEnc;
                     break;
                 default:
-                    return;
+                    return state;
             }
         },
         resetOperation(state) {
