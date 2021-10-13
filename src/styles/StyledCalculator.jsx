@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCalculator = styled.div`
-  width: 50%;
+  width: 320px;
   height: 60vh;
   position: relative;
   top: 50%;
@@ -9,12 +9,18 @@ export const StyledCalculator = styled.div`
   transform: translate(-50%, -50%);
   background: yellow;
   
+  
   & input{
-    //box-sizing: border-box;
+    font-size: 24px;
+    text-align: right;
+    background: black;
+    border: none;
+    border-radius: 4px;
     display: block;
-    height: 32px;
-    padding: 0;
-    margin: 0;
+    height: 62px;
+    padding-right: 16px;
     width: 100%;
+    color:white
+ 
   }
 `
