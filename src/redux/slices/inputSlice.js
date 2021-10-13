@@ -9,8 +9,9 @@ export const inputSlice = createSlice({
     initialState,
     reducers: {
         updateValue: (state, action) => {
+
             const newInput = Number(action.payload);
-            if (!Number.isNaN(newInput)) {
+            if (!Number.isNaN(newInput) || action.payload === '-') {
                 state.value = action.payload;
             }
         },
