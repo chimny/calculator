@@ -1,36 +1,41 @@
 import {Calculator} from "./components/Calculator";
 import {Wrapper} from "./styles/Wrapper";
 import {GlobalStyle} from "./styles/GlobalStyle";
-
-//addedd key press to catch particular buttons
 import {useEffect} from "react";
-
-//test function
-const keyPressedHandler = () =>{
-    console.log('key pressed!')
-}
-
+import {NUMBERS} from "./data/symbols";
+import {addNumber} from "./redux/slices/inputSlice";
+import {useDispatch} from "react-redux";
 
 
 function App() {
 
-    //side effect trigger
-    useEffect(() => {
-        const keyPressHandler = (e) => {
-          console.log(e.key);
-        };
+    const dispatch = useDispatch();
 
-        document.addEventListener('keydown', keyPressHandler);
+    //@todo update function to handle operation symbols
+    const handleKeyDown = (e) => {
+        if (NUMBERS.includes(e.key)) {
+            dispatch(addNumber(e.key))
+        } else {
+
+            console.log(e.key);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleKeyDown);
+
+        // cleanup this component
         return () => {
-            document.removeEventListener('keydown', keyPressHandler);
+            window.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
 
-    // //side effect trigger end
-    // @todo set the event to separate file (redux??), triger update function regarding chosen button
+
+    //side effect trigger
+
 
     return (
-        <div className="App" >
+        <div className="App">
             <GlobalStyle/>
             <Wrapper>
                 <Calculator/>

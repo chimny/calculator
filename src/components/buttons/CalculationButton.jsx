@@ -2,11 +2,13 @@ import {useSelector, useDispatch} from "react-redux";
 import {numberCalcValue, addOperator, operationSymbols} from '../../redux/slices/calculationSlice';
 import {clearValue, updateValue} from '../../redux/slices/inputSlice';
 
+
 export const CalculationButton = (props) => {
     const inputValue = useSelector((state => state.inputValue.value));
     const dispatch = useDispatch();
 
 
+    //@todo perhaps it can be trasnformed into separate slice???
     function updateInput() {
         if (props.symbol === '.') {
             if (inputValue.includes('.') || inputValue.length === 0) {
@@ -23,6 +25,8 @@ export const CalculationButton = (props) => {
             }
         }
     }
+
+
 
     return (
         <button onClick={updateInput}>{props.symbol}</button>
