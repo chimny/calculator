@@ -9,7 +9,11 @@ export const CalculationButton = (props) => {
 
     function updateInput() {
         if (props.symbol === '.') {
+            if (inputValue.includes('.') || inputValue.length === 0) {
+                return
+            }
             dispatch(updateValue(props.symbol));
+
         } else {
             dispatch(numberCalcValue(inputValue));
             dispatch(addOperator(props.symbol));
