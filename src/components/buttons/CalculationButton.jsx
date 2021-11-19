@@ -22,7 +22,6 @@ export const CalculationButton = (props) => {
                 dispatch(operationSymbols(inputValue))
             }
         }
-
     }
 
     return (
