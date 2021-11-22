@@ -1,26 +1,20 @@
 import styled from "styled-components";
 
 export const StyledCalculator = styled.div`
-  width: 320px;
-  height: 60vh;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: yellow;
-  
-  
-  & input{
+  width: ${({theme} )=> theme.mobileWidth};;
+  height: 100vh;
+  background: ${({theme} )=> theme.veryDarkDesaturatedBlue};
+
+  & .calOperations {
     font-size: 24px;
     text-align: right;
     background: black;
-    border: none;
     border-radius: 4px;
     display: block;
     height: 62px;
     padding-right: 16px;
     width: 100%;
-    color:white
- 
+    color: white
+
   }
 `

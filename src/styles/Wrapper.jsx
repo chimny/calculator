@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.section`
+export const Wrapper = styled.div`
   text-align: center;
-  margin: 0;
-  width: 100vw;
-  background: lightgray;
+  max-width: ${({theme} )=> theme.veryDarkDesaturatedBlue};
   height: 100vh;
 `

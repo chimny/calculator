@@ -6,15 +6,16 @@ import {NUMBERS, OPERATION_SYMBOLS} from "./data/symbols";
 import {addNumber, clearValue, updateValue} from "./redux/slices/inputSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {addOperator, numberCalcValue, operationSymbols} from "./redux/slices/calculationSlice";
-
+import {ThemeProvider} from "styled-components";
+import {theme} from "./styles/theme";
 
 function App() {
 
     const dispatch = useDispatch();
     const inputValue = useSelector((state => state.inputValue.value));
+    const activeOperator = useSelector((state => state.operationSequence.operator));
 
-    //@todo if enter button occurs, behave as equal sign
-    function updateInput(currentInput, symbol) {
+    function updateInput(currentInput, symbol, operator) {
 
         let localSymbol = symbol;
 
@@ -30,7 +31,12 @@ function App() {
         } else {
 
             if (localSymbol === '=') {
-                dispatch(operationSymbols(currentInput))
+                if (operator) {
+                    dispatch(operationSymbols(currentInput))
+                } else {
+                    return
+                }
+
             }
 
             dispatch(numberCalcValue(currentInput));
@@ -44,9 +50,7 @@ function App() {
         if (NUMBERS.includes(e.key)) {
             dispatch(addNumber(e.key))
         } else if (OPERATION_SYMBOLS.includes(e.key) || e.key === "Enter") {
-            updateInput(inputValue, e.key)
-        } else {
-            return
+            updateInput(inputValue, e.key, activeOperator)
         }
     };
 
@@ -61,10 +65,12 @@ function App() {
 
     return (
         <div className="App">
-            <GlobalStyle/>
-            <Wrapper>
-                <Calculator/>
-            </Wrapper>
+            <ThemeProvider theme={theme}>
+                <GlobalStyle/>
+                <Wrapper>
+                    <Calculator/>
+                </Wrapper>
+            </ThemeProvider>
         </div>
     );
 }
