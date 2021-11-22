@@ -61,7 +61,6 @@ export const calculationSlice = createSlice({
                 result: null,
             }
         }
-
     },
 });
 

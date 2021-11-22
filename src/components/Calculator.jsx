@@ -16,7 +16,7 @@ export const Calculator = () => {
         dispatch(updateValue(e.target.value));
     }
 
-    //@todo write function to react on keyboard typing
+
 
     return (
 

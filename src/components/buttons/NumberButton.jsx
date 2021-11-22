@@ -1,7 +1,7 @@
 import {useDispatch} from "react-redux";
 import {addNumber} from '../../redux/slices/inputSlice'
 
-export const Button = (props) => {
+export const NumberButton = (props) => {
     const dispatch = useDispatch();
 
 

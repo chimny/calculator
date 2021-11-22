@@ -8,7 +8,6 @@ export const CalculationButton = (props) => {
     const dispatch = useDispatch();
 
 
-    //@todo perhaps it can be trasnformed into separate slice???
     function updateInput() {
         if (props.symbol === '.') {
             if (inputValue.includes('.') || inputValue.length === 0) {

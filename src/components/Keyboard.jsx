@@ -1,4 +1,4 @@
-import {Button} from "./buttons/Button";
+import {NumberButton} from "./buttons/NumberButton";
 import {DEL} from "./buttons/DEL";
 import {CalculationButton} from "./buttons/CalculationButton";
 import {Reset} from "./buttons/Reset";
@@ -11,7 +11,7 @@ export const Keyboard = () => {
     return (
         <StyledKeyboard>
             {
-                NUMBERS.map(number => <Button number={number} key={number}/>)
+                NUMBERS.map(number => <NumberButton number={number} key={number}/>)
             }
             <DEL/>
             {OPERATION_SYMBOLS.map(symbol => <CalculationButton symbol={symbol} key={symbol}/>)}
