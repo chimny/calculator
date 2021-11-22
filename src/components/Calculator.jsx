@@ -10,9 +10,9 @@ export const Calculator = () => {
     const inputValue = useSelector((state => state.inputValue.value));
     const {firstNumber, operator, secondNumber, result} = useSelector((state => state.operationSequence));
 
-    // const updateFunction = (e) => {
-    //     dispatch(updateValue(e.target.value));
-    // }
+    const updateFunction = (e) => {
+        dispatch(updateValue(e.target.value));
+    }
 
 
     return (
@@ -20,8 +20,8 @@ export const Calculator = () => {
 
             <div className={'calOperations'}>
                 <p>  {firstNumber} {operator} {secondNumber}</p>
-                <p>{inputValue} {result}</p>
-                {/*<input value={inputValue} onChange={updateFunction}/>*/}
+                <p > result :{result}</p>
+                <input value={inputValue} onChange={updateFunction}/>
             </div>
 
             <Keyboard/>
