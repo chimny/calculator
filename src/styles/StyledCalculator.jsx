@@ -9,11 +9,16 @@ export const StyledCalculator = styled.div`
     text-align: right;
     background: black;
     border-radius: 4px;
-    display: block;
-    height: 62px;
+    display: flex;
+    flex-direction: column;
+    height: 124px;
     padding-right: 16px;
     width: 100%;
-    color: white
-
+    color: white;
+& p{
+      display: block;
+      width: 100%;
+      height: 16px;
+    }
   }
 `

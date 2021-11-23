@@ -17,6 +17,10 @@ export const CalculationButton = (props) => {
             dispatch(updateValue(props.symbol));
 
         } else {
+
+            dispatch(numberCalcValue(inputValue));
+            dispatch(addOperator(props.symbol));
+            dispatch(clearValue());
             if (props.symbol === '=') {
                 if (activeOperator) {
                     dispatch(operationSymbols(inputValue))
@@ -24,9 +28,6 @@ export const CalculationButton = (props) => {
                     return
                 }
             }
-            dispatch(numberCalcValue(inputValue));
-            dispatch(addOperator(props.symbol));
-            dispatch(clearValue());
         }
     }
 
