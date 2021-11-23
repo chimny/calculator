@@ -11,5 +11,11 @@ export const GlobalStyle = createGlobalStyle`
     & *{
       box-sizing: border-box;
     }
+    
+    & button {
+      font-size: 32px;
+      color: ${({theme}) => theme.darkGrayBlue};
+      font-weight: 700;
+    }
   }
 `;

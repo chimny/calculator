@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const StyledKeyboard = styled.div`
   padding: 20px;
-  height: 100%;
+  margin-top:  32px;
   display: grid;
-  grid-template-rows: repeat(5, 24px);
-  grid-template-columns: repeat(4, 64px);
+  grid-template-rows: repeat(5, 40px);
+  grid-template-columns: repeat(4, 72px);
   gap: 8px;
-  margin: 0 auto;
+  background: ${({theme} )=> theme.veryDarkDesaturatedBlueKeypadScreenBGC};
 `
