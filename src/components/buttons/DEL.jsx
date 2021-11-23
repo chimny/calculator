@@ -1,11 +1,12 @@
 import {useDispatch} from "react-redux";
 import {removeNumber} from '../../redux/slices/inputSlice'
+import {StyledClearButton} from "../../styles/StyledClearButton";
 
 export const DEL = () => {
     const dispatch = useDispatch();
 
 
     return (
-        <button onClick={() => dispatch(removeNumber())}>DEL</button>
+        <StyledClearButton onClick={() => dispatch(removeNumber())}>DEL</StyledClearButton>
     )
 }

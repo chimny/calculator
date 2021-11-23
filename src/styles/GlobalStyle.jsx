@@ -16,6 +16,9 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 32px;
       color: ${({theme}) => theme.darkGrayBlue};
       font-weight: 700;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 3px ${({theme}) => theme.grayOrangeKeyShadow};
     }
   }
 `;

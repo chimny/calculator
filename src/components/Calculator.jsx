@@ -1,5 +1,5 @@
 import {Keyboard} from "./Keyboard";
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 import {StyledCalculator} from "../styles/StyledCalculator";
 import {StyledCalcWindow} from "../styles/StyledCalcWindow";
 

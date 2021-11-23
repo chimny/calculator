@@ -1,7 +1,5 @@
 import {useSelector, useDispatch} from "react-redux";
 import {updateInput} from "../../utils/updateInput";
-import {StyledCalcWindow} from "../../styles/StyledNumButton";
-
 
 export const CalculationButton = (props) => {
     const inputValue = useSelector((state => state.inputValue.value));
@@ -9,6 +7,6 @@ export const CalculationButton = (props) => {
     const dispatch = useDispatch();
 
     return (
-        <button onClick={()=> updateInput(inputValue,props.symbol,activeOperator,dispatch)}>{props.symbol}</button>
+        <button onClick={() => updateInput(inputValue, props.symbol, activeOperator, dispatch)}>{props.symbol}</button>
     )
 }
