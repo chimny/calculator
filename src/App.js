@@ -3,45 +3,18 @@ import {Wrapper} from "./styles/Wrapper";
 import {GlobalStyle} from "./styles/GlobalStyle";
 import {useEffect} from "react";
 import {NUMBERS, OPERATION_SYMBOLS} from "./data/symbols";
-import {addNumber, clearValue, updateValue} from "./redux/slices/inputSlice";
+import {addNumber} from "./redux/slices/inputSlice";
 import {useDispatch, useSelector} from "react-redux";
-import {addOperator, numberCalcValue, operationSymbols} from "./redux/slices/calculationSlice";
+
 import {ThemeProvider} from "styled-components";
 import {theme} from "./styles/theme";
-import {updateInput} from "./updateInput";
+import {updateInput} from "./utils/updateInput";
 
 function App() {
 
     const dispatch = useDispatch();
     const inputValue = useSelector((state => state.inputValue.value));
     const activeOperator = useSelector((state => state.operationSequence.operator));
-
-    // function updateInput(currentInput, symbol, operator) {
-    //     let localSymbol = symbol;
-    //     if (symbol === 'Enter') {
-    //         localSymbol = "="
-    //     }
-    //
-    //     if (localSymbol === '.') {
-    //         if (currentInput.includes('.') || currentInput.length === 0) {
-    //             return
-    //         }
-    //         dispatch(updateValue(localSymbol));
-    //     } else {
-    //         dispatch(numberCalcValue(currentInput));
-    //         dispatch(addOperator(localSymbol));
-    //         dispatch(clearValue());
-    //         if (localSymbol === '=') {
-    //             if (operator) {
-    //                 dispatch(operationSymbols(currentInput))
-    //             } else {
-    //                 return
-    //             }
-    //         }
-    //     }
-    // }
-
-
 
     const handleKeyDown = (e) => {
         if (NUMBERS.includes(e.key)) {

@@ -1,9 +1,8 @@
-import {clearValue, updateValue} from "./redux/slices/inputSlice";
-import {addOperator, numberCalcValue, operationSymbols} from "./redux/slices/calculationSlice";
-import {useDispatch} from "react-redux";
+import {clearValue, updateValue} from "../redux/slices/inputSlice";
+import {addOperator, numberCalcValue, operationSymbols} from "../redux/slices/calculationSlice";
 
 
-export  function updateInput(currentInput, symbol, operator, dispatch) {
+export function updateInput(currentInput, symbol, operator, dispatch) {
 
     let localSymbol = symbol;
     if (symbol === 'Enter') {
@@ -22,8 +21,6 @@ export  function updateInput(currentInput, symbol, operator, dispatch) {
         if (localSymbol === '=') {
             if (operator) {
                 dispatch(operationSymbols(currentInput))
-            } else {
-                return
             }
         }
     }
