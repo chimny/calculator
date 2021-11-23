@@ -6,6 +6,6 @@ export const StyledKeyboard = styled.div`
   display: grid;
   grid-template-rows: repeat(5, 40px);
   grid-template-columns: repeat(4, 72px);
-  gap: 8px;
+  gap: 16px;
   background: ${({theme} )=> theme.veryDarkDesaturatedBlueKeypadScreenBGC};
 `

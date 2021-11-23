@@ -5,6 +5,5 @@ export const StyledCalculator = styled.div`
   margin: 0 auto;
   height: 100vh;
   background: ${({theme} )=> theme.veryDarkDesaturatedBlue};
-  
   }
 `

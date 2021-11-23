@@ -6,6 +6,6 @@ export const StyledNumButton = styled.button`
   border: none;
   cursor: pointer;
 font-size: 32px;
-  color: ${({theme}) => theme.darkGrayBlue};
+  color: ${({theme}) => theme.darkBlueKeyShadow};
   font-weight: 700;
 }`

@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     
     & button {
       font-size: 32px;
-      color: ${({theme}) => theme.darkGrayBlue};
+      //color: ${({theme}) => theme.darkGrayBlue};
       font-weight: 700;
       border-radius: 8px;
       border: none;
