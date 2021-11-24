@@ -8,5 +8,6 @@ export const StyledKeyboard = styled.div`
   grid-template-columns: repeat(4, 72px);
   gap: 16px;
   background: ${({theme}) => theme.veryDarkDesaturatedBlueKeypadScreenBGC};
-  grid-template-area: "7 8 9 Del" "4 5 6 +" "1 2 3 -" ". 0 / *" "Reset Rest = =";
+  grid-template-areas: "seven eight nine DEL" "four five six plus" "one two three minus" "dot zero divide multiply" "Reset Reset equal equal";
 `
+

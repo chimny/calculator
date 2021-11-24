@@ -11,10 +11,10 @@ export const Keyboard = () => {
     return (
         <StyledKeyboard>
             {
-                NUMBERS.map(number => <NumberButton number={number} key={number}/>)
+                NUMBERS.map(({num,gridArea}) => <NumberButton number={num} area={gridArea} key={gridArea}/>)
             }
             <DEL/>
-            {OPERATION_SYMBOLS.map(symbol => <CalculationButton symbol={symbol} key={symbol}/>)}
+            {OPERATION_SYMBOLS.map(({mathAction,gridArea} )=> <CalculationButton symbol={mathAction} area={gridArea} key={gridArea}/>)}
             <Reset/>
         </StyledKeyboard>
     )
