@@ -9,4 +9,5 @@ export const StyledCalculationButton = styled.button`
   color: ${({theme}) => theme.darkBlueKeyShadow};
   font-weight: 700;
   box-shadow: 0 3px  ${({symbol, theme}) => symbol === '=' ? theme.darkRed : theme.grayOrangeKeyShadow };
+  grid-area: ${({area}) => area };
 }`

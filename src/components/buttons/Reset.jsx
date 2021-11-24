@@ -7,6 +7,6 @@ export const Reset = () => {
 
 
     return (
-        <StyledClearButton onClick={() => dispatch(resetOperation())}>Reset</StyledClearButton>
+        <StyledClearButton area={'Reset'}onClick={() => dispatch(resetOperation())}>Reset</StyledClearButton>
     )
 }

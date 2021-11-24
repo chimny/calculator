@@ -7,6 +7,6 @@ export const DEL = () => {
 
 
     return (
-        <StyledClearButton onClick={() => dispatch(removeNumber())}>DEL</StyledClearButton>
+        <StyledClearButton area={'DEL'}onClick={() => dispatch(removeNumber())}>DEL</StyledClearButton>
     )
 }

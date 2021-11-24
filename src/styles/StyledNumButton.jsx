@@ -8,4 +8,5 @@ export const StyledNumButton = styled.button`
 font-size: 32px;
   color: ${({theme}) => theme.darkBlueKeyShadow};
   font-weight: 700;
+  grid-area: ${({area}) => area };
 }`

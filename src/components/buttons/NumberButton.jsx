@@ -7,6 +7,6 @@ export const NumberButton = (props) => {
 
 
     return (
-        <StyledNumButton onClick={() => dispatch(addNumber(props.number))}>{props.number}</StyledNumButton>
+        <StyledNumButton area={props.number} onClick={() => dispatch(addNumber(props.number))}>{props.number}</StyledNumButton>
     )
 }
