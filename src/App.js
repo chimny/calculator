@@ -17,9 +17,12 @@ function App() {
     const activeOperator = useSelector((state => state.operationSequence.operator));
 
     const handleKeyDown = (e) => {
-        if (NUMBERS.includes(e.key)) {
+        const numberSymbols = NUMBERS.map(({num}) => num);
+        const operationSymbols = OPERATION_SYMBOLS.map(({mathAction}) => mathAction);
+
+        if (numberSymbols.includes(e.key)) {
             dispatch(addNumber(e.key))
-        } else if (OPERATION_SYMBOLS.includes(e.key) || e.key === "Enter") {
+        } else if (operationSymbols.includes(e.key) || e.key === "Enter") {
             updateInput(inputValue, e.key, activeOperator, dispatch)
         }
     };
