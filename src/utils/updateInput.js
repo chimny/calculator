@@ -1,4 +1,4 @@
-import {clearValue, updateValue} from "../redux/slices/inputSlice";
+import {addNumber, clearValue, updateValue} from "../redux/slices/inputSlice";
 import {addOperator, numberCalcValue, operationSymbols} from "../redux/slices/calculationSlice";
 
 
@@ -14,7 +14,12 @@ export function updateInput(currentInput, symbol, operator, dispatch) {
             return
         }
         dispatch(updateValue(localSymbol));
-    } else {
+    }
+    else if(localSymbol === '-' && currentInput.length === 0){
+        dispatch(addNumber(symbol))
+    }
+
+    else {
         dispatch(numberCalcValue(currentInput));
         dispatch(addOperator(localSymbol));
         dispatch(clearValue());
