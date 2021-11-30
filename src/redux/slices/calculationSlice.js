@@ -20,9 +20,10 @@ export const calculationSlice = createSlice({
                     state.secondNumber = action.payload;
                 }
             } else {
-                state.firstNumber = state.result;
-                //@todo test functionalibity added
-                state.result = '';
+                if (state.result) {
+                    state.firstNumber = state.result;
+                }
+
             }
         },
         addOperator(state, action) {

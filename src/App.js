@@ -14,6 +14,7 @@ function App() {
 
     const dispatch = useDispatch();
     const inputValue = useSelector((state => state.inputValue.value));
+    const result = useSelector((state => state.operationSequence.result))
     const activeOperator = useSelector((state => state.operationSequence.operator));
 
     const handleKeyDown = (e) => {
@@ -23,7 +24,7 @@ function App() {
         if (numberSymbols.includes(e.key)) {
             dispatch(addNumber(e.key))
         } else if (operationSymbols.includes(e.key) || e.key === "Enter") {
-            updateInput(inputValue, e.key, activeOperator, dispatch)
+            updateInput(inputValue, e.key, activeOperator, dispatch,result)
         }
     };
 
