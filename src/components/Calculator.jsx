@@ -1,13 +1,8 @@
 import {Keyboard} from "./Keyboard";
-import {useSelector} from "react-redux";
 import {StyledCalculator} from "../styles/StyledCalculator";
-import {StyledCalcWindow} from "../styles/StyledCalcWindow";
+import {CalcWindow} from "./CalcWindow";
 
 export const Calculator = () => {
-
-
-    const inputValue = useSelector((state => state.inputValue.value));
-    const {firstNumber, operator, secondNumber, result} = useSelector((state => state.operationSequence));
 
 
     return (
@@ -16,12 +11,9 @@ export const Calculator = () => {
                 <p>calc</p>
                 <p>theme</p>
             </div>
-            <StyledCalcWindow>
-                <p>  {firstNumber} {operator} {secondNumber}</p>
-                {/*@todo if input has value result should be hidden*/}
-                <p>  {inputValue} {result}</p>
 
-            </StyledCalcWindow>
+            <CalcWindow/>
+
 
             <Keyboard/>
 
