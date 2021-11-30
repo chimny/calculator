@@ -7,8 +7,9 @@ export const CalcWindow = () => {
     const {firstNumber, operator, secondNumber, result} = useSelector((state => state.operationSequence));
 
     let activeInputView;
-
     let equalSignVisible;
+
+
     if (result) {
         equalSignVisible = <span>=</span>;
         activeInputView = <span>{result}</span>;
@@ -18,11 +19,12 @@ export const CalcWindow = () => {
     }
 
 
+
+
     return (
 
         <StyledCalcWindow>
             <p>{firstNumber} {operator} {secondNumber} {equalSignVisible}</p>
-            {/*@todo if input has value result should be hidden*/}
             <p> {activeInputView}</p>
 
         </StyledCalcWindow>
