@@ -21,6 +21,8 @@ export const calculationSlice = createSlice({
                 }
             } else {
                 state.firstNumber = state.result;
+                //@todo test functionalibity added
+                state.result = '';
             }
         },
         addOperator(state, action) {
