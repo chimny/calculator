@@ -1,20 +1,16 @@
 import {Keyboard} from "./Keyboard";
 import {StyledCalculator} from "../styles/StyledCalculator";
 import {CalcWindow} from "./CalcWindow";
+import {CalcHeader} from "./CalcHeader";
 
 export const Calculator = () => {
 
 
     return (
         <StyledCalculator>
-            <div>
-                <p>calc</p>
-                <p>theme</p>
-            </div>
 
+            <CalcHeader/>
             <CalcWindow/>
-
-
             <Keyboard/>
 
         </StyledCalculator>

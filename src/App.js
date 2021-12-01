@@ -14,7 +14,6 @@ function App() {
 
     const dispatch = useDispatch();
     const inputValue = useSelector((state => state.inputValue.value));
-    const result = useSelector((state => state.operationSequence.result))
     const activeOperator = useSelector((state => state.operationSequence.operator));
 
     const handleKeyDown = (e) => {
