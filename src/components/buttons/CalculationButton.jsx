@@ -10,6 +10,6 @@ export const CalculationButton = (props) => {
     const dispatch = useDispatch();
 
     return (
-        <StyledCalculationButton area={area} symbol={symbol} onClick={() => updateInput(inputValue, symbol, activeOperator, dispatch,result)}>{symbol}</StyledCalculationButton>
+        <StyledCalculationButton area={area} symbol={symbol} onClick={() => updateInput(inputValue, symbol, activeOperator, dispatch)}>{symbol}</StyledCalculationButton>
     )
 }

@@ -24,7 +24,7 @@ function App() {
         if (numberSymbols.includes(e.key)) {
             dispatch(addNumber(e.key))
         } else if (operationSymbols.includes(e.key) || e.key === "Enter") {
-            updateInput(inputValue, e.key, activeOperator, dispatch,result)
+            updateInput(inputValue, e.key, activeOperator, dispatch)
         }
     };
 

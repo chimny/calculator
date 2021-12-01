@@ -20,14 +20,16 @@ export const calculationSlice = createSlice({
                     state.secondNumber = action.payload;
                 }
             } else {
-                state.firstNumber = state.result;
-                //@todo conditions below should work ONLY if someone changes symbol (enter button, or equal should block)
-                state.secondNumber = '';
-                state.result = '';
+                if (state.result) {
+                    state.firstNumber = state.result;
+                }
+
             }
         },
         addOperator(state, action) {
             if (action.payload === "=") return;
+            state.secondNumber = '';
+            state.result = '';
             state.operator = action.payload;
         },
         operationSymbols(state, action) {
