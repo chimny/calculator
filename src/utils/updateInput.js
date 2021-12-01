@@ -4,6 +4,7 @@ import {addOperator, numberCalcValue, operationSymbols} from "../redux/slices/ca
 
 export function updateInput(currentInput, symbol, operator, dispatch) {
 
+    //@todo perhaps switch statement to receive clear logic? need to press double minus to work properly
     let localSymbol = symbol;
     if (symbol === 'Enter') {
         localSymbol = "="
@@ -14,13 +15,11 @@ export function updateInput(currentInput, symbol, operator, dispatch) {
             return
         }
         dispatch(updateValue(localSymbol));
-    }
-    else if(localSymbol === '-' && currentInput.length === 0 ){
+    } else if (localSymbol === '-' && currentInput.length === 0) {
         dispatch(addNumber(symbol))
-    }
-
-    else {
+    } else {
         dispatch(numberCalcValue(currentInput));
+
         dispatch(addOperator(localSymbol));
         dispatch(clearValue());
         if (localSymbol === '=') {
@@ -29,4 +28,6 @@ export function updateInput(currentInput, symbol, operator, dispatch) {
             }
         }
     }
+
+
 }

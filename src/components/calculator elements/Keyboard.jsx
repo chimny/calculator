@@ -2,8 +2,8 @@ import {NumberButton} from "./buttons/NumberButton";
 import {DEL} from "./buttons/DEL";
 import {CalculationButton} from "./buttons/CalculationButton";
 import {Reset} from "./buttons/Reset";
-import {StyledKeyboard} from "../styles/StyledKeyboard";
-import {NUMBERS, OPERATION_SYMBOLS} from "../data/symbols";
+import {StyledKeyboard} from "../../styles/StyledKeyboard";
+import {NUMBERS, OPERATION_SYMBOLS} from "../../data/symbols";
 
 
 export const Keyboard = () => {

@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-import {StyledCalcWindow} from "../styles/StyledCalcWindow";
+import {StyledCalcWindow} from "../../styles/StyledCalcWindow";
 
 export const CalcWindow = () => {
 

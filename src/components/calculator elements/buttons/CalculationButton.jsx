@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from "react-redux";
-import {updateInput} from "../../utils/updateInput";
-import {StyledCalculationButton} from "../../styles/StyledCalculationButton";
+import {updateInput} from "../../../utils/updateInput";
+import {StyledCalculationButton} from "../../../styles/StyledCalculationButton";
 
 export const CalculationButton = (props) => {
     const {symbol,area} = props;

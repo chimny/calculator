@@ -1,4 +1,4 @@
-import {StyledCalcHeader} from "../styles/StyledCalcHeader";
+import {StyledCalcHeader} from "../../styles/StyledCalcHeader";
 import {ToggleSwitch} from "./ToggleSwitch";
 
 

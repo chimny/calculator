@@ -1,7 +1,7 @@
-import {Keyboard} from "./Keyboard";
+import {Keyboard} from "./calculator elements/Keyboard";
 import {StyledCalculator} from "../styles/StyledCalculator";
-import {CalcWindow} from "./CalcWindow";
-import {CalcHeader} from "./CalcHeader";
+import {CalcWindow} from "./calculator elements/CalcWindow";
+import {CalcHeader} from "./calculator elements/CalcHeader";
 
 export const Calculator = () => {
 

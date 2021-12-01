@@ -1,10 +1,11 @@
 import {useState} from "react";
-import {StyledToggleSwitch} from "../styles/StyledToggleSwitch";
+import {StyledToggleSwitch} from "../../styles/StyledToggleSwitch";
 
 export const ToggleSwitch = () => {
     const [isToggled, setIsToggled] = useState(false);
     const onToggle = () => setIsToggled(!isToggled);
 
+    //@todo toggle should have 3 stages
 
     return (
         <StyledToggleSwitch>
