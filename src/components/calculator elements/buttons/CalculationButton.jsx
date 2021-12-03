@@ -4,12 +4,11 @@ import {StyledCalculationButton} from "../../../styles/StyledCalculationButton";
 
 export const CalculationButton = (props) => {
     const {symbol,area} = props;
-    const inputValue = useSelector((state => state.inputValue.value));
-    const result = useSelector((state => state.operationSequence.result));
-    const activeOperator = useSelector((state => state.operationSequence.operator));
+    const {value : inputValue} = useSelector((state => state.inputValue));
+    const {result, operator} = useSelector((state => state.operationSequence));
     const dispatch = useDispatch();
 
     return (
-        <StyledCalculationButton area={area} symbol={symbol} onClick={() => updateInput(inputValue, symbol, activeOperator, dispatch, result)}>{symbol}</StyledCalculationButton>
+        <StyledCalculationButton area={area} symbol={symbol} onClick={() => updateInput(inputValue, symbol, operator, dispatch, result)}>{symbol}</StyledCalculationButton>
     )
 }

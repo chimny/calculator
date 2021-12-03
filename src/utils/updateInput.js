@@ -4,7 +4,7 @@ import {addOperator, numberCalcValue, operationSymbols} from "../redux/slices/ca
 
 export function updateInput(currentInput, symbol, operator, dispatch, result) {
 
-    //@todo perhaps switch statement to receive clear logic? need to press double minus to work properly
+    //@todo debug shouldn't be a result without secondNumber!
     let localSymbol = symbol;
     if (symbol === 'Enter') {
         localSymbol = "="
