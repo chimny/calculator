@@ -1,6 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-
+//@todo potential risk of bugs in case of operator changing one to null or to empty string!
 const initialState = {
     firstNumber: null,
     operator: null,
