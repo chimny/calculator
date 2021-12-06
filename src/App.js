@@ -7,7 +7,7 @@ import {addNumber} from "./redux/slices/inputSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 import {ThemeProvider} from "styled-components";
-import {theme} from "./styles/theme";
+import {firstTheme} from "./styles/theme.js";
 import {updateInput} from "./utils/updateInput";
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
 
     return (
         <div className="App">
-            <ThemeProvider theme={theme}>
+            <ThemeProvider theme={firstTheme}>
                 <GlobalStyle/>
                 <Wrapper>
                     <Calculator/>
