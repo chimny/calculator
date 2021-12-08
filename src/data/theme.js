@@ -1,4 +1,4 @@
-export const firstTheme = {
+ const firstTheme = {
     //containers
     mobileWidth: '375px',
     desktopWidth: '1440px',
@@ -23,7 +23,7 @@ export const firstTheme = {
 
 }
 
-export const secondTheme = {
+ const secondTheme = {
     //containers
     mobileWidth: '375px',
     desktopWidth: '1440px',
@@ -47,3 +47,34 @@ export const secondTheme = {
     whiteColor: 'hsl(0, 0%, 100%)',
 
 }
+
+
+ const thirdTheme = {
+    //containers
+    mobileWidth: '375px',
+    desktopWidth: '1440px',
+
+//    colors theme 1
+//    main background
+    veryDarkDesaturatedBlue: 'hsl(59,27%,31%)',
+//    toggle background, keypad background
+    veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
+    veryDarkDesaturatedBlueKeypadScreenBGC: 'hsl(224, 36%, 15%)',
+
+//    keys below
+    darkBlueKeyBackground : 'hsl(225, 21%, 49%)',
+    darkBlueKeyShadow: 'hsl(73,100%,50%)',
+    redColor: 'hsl(6, 63%, 50%)',
+    darkRed: 'hsl(270,19%,10%)',
+    lightGrayKeyBackground: 'hsl(30, 25%, 89%)',
+    grayOrangeKeyShadow: 'hsl(28, 16%, 65%)',
+//    text below
+    darkGrayBlue: 'hsl(221, 14%, 31%)',
+    whiteColor: 'hsl(0, 0%, 100%)',
+
+}
+
+
+ module.exports = {
+     firstTheme,secondTheme,thirdTheme
+ };

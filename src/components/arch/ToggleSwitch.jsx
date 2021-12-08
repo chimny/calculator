@@ -5,7 +5,7 @@ export const ToggleSwitch = () => {
     const [isToggled, setIsToggled] = useState(false);
     const onToggle = () => setIsToggled(!isToggled);
 
-    //@todo toggle should have 3 stages
+
 
     return (
         <StyledToggleSwitch>

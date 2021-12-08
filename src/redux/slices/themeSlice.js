@@ -1,11 +1,13 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {firstTheme, secondTheme, thirdTheme} from '../../data/theme';
 
 
-const initialState = {
-    firstTheme: true,
-    secondTheme: false,
-    thirdTheme: false,
-};
+const initialState = [
+        {firstThemeActive: true, firstTheme},
+        {secondThemeActive: false, secondTheme},
+        {thirdThemeActive: false, thirdTheme},
+    ]
+;
 
 export const themeSlice = createSlice({
     name: "themeSlice",
@@ -13,25 +15,26 @@ export const themeSlice = createSlice({
     reducers: {
         setTheme(state, action) {
 
+            //@todo clear state restore to set proper object in array
             const clearedState = {
-                ...Object.keys(state).reduce((reduced, key) => ({ ...reduced, [key]: false }), {})
+                ...Object.keys(state).reduce((reduced, key) => ({...reduced, [0]: false}), {})
             }
 
 
-          switch (action.payload){
-              case 'firstTheme':
-                  return {...clearedState, firstTheme:true}
-              case 'secondTheme':
-                  return {...clearedState, secondTheme:true}
-              case 'thirdTheme':
-                  return {...clearedState, thirdTheme:true}
-              default:
-                  return {...clearedState, firstTheme:true}
-          }
+            switch (action.payload) {
+                case 'firstTheme':
+                    return {...state, firstThemeActive: true}
+                case 'secondTheme':
+                    return {...clearedState, secondThemeActive: true}
+                case 'thirdTheme':
+                    return {...clearedState, thirdThemeActive: true}
+                default:
+                    return {...clearedState, firstThemeActive: true}
+            }
         }
 
     },
 });
 
-export const {setTheme} =  themeSlice.actions;
+export const {setTheme} = themeSlice.actions;
 export default themeSlice.reducer;

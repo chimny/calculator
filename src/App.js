@@ -7,7 +7,7 @@ import {addNumber} from "./redux/slices/inputSlice";
 import {useDispatch, useSelector} from "react-redux";
 
 import {ThemeProvider} from "styled-components";
-import {firstTheme} from "./styles/theme.js";
+import {firstTheme} from "./data/theme.js";
 import {updateInput} from "./utils/updateInput";
 
 function App() {
