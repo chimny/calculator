@@ -15,7 +15,7 @@ function App() {
     const dispatch = useDispatch();
     const inputValue = useSelector((state => state.inputValue.value));
     const {operator, result} = useSelector((state => state.operationSequence));
-
+const theme = useSelector((state => state.theme));
 
     const handleKeyDown = (e) => {
         const numberSymbols = NUMBERS.map(({num}) => num);
@@ -39,7 +39,7 @@ function App() {
 
     return (
         <div className="App">
-            <ThemeProvider theme={firstTheme}>
+            <ThemeProvider theme={theme}>
                 <GlobalStyle/>
                 <Wrapper>
                     <Calculator/>
