@@ -16,7 +16,6 @@ export const CalcHeader = () => {
         <StyledCalcHeader>
             <p>calc</p>
             <div>
-                <h1>It's a first theme!</h1>
                 <button onClick={()=> setThemeFunction('firstTheme')}>First</button>
                 <button onClick={()=> setThemeFunction('secondTheme')}>Second</button>
                 <button onClick={()=> setThemeFunction('thirdTheme')}>Third</button>
