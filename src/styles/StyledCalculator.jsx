@@ -5,6 +5,6 @@ export const StyledCalculator = styled.div`
   max-width: 450px;
   margin: 0 auto;
   height: 100vh;
-  background: ${({theme} )=> theme.veryDarkDesaturatedBlue};
+  background: ${({theme} )=> theme.mainBackground};
   }
 `

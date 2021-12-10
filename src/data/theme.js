@@ -5,7 +5,7 @@
 
 //    colors theme 1
 //    main background
-    veryDarkDesaturatedBlue: 'hsl(222, 26%, 31%)',
+    mainBackground: 'hsl(222, 26%, 31%)',
 //    toggle background, keypad background
     veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
     veryDarkDesaturatedBlueKeypadScreenBGC: 'hsl(224, 36%, 15%)',
@@ -30,7 +30,7 @@
 
 //    colors theme 1
 //    main background
-    veryDarkDesaturatedBlue: 'hsl(59,27%,31%)',
+     mainBackground: 'hsl(59,27%,31%)',
 //    toggle background, keypad background
     veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
     veryDarkDesaturatedBlueKeypadScreenBGC: 'hsl(224, 36%, 15%)',
@@ -56,7 +56,7 @@
 
 //    colors theme 1
 //    main background
-    veryDarkDesaturatedBlue: 'hsl(59,27%,31%)',
+     mainBackground: 'hsl(59,27%,31%)',
 //    toggle background, keypad background
     veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
     veryDarkDesaturatedBlueKeypadScreenBGC: 'hsl(224, 36%, 15%)',
