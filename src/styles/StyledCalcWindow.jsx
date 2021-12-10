@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledCalcWindow = styled.div`
   text-align: right;
-  background: ${({theme} )=> theme.veryDarkDesaturatedBlueKeypadScreenBGC};
+  background: ${({theme} )=> theme.windowBackground};
   border-radius: 12px;
   display: flex;
   flex-direction: column;
