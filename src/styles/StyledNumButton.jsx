@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const StyledNumButton = styled.button`
-  background: ${({theme}) => theme.lightGrayKeyBackground};
+  background: ${({theme}) => theme.keyBackground};
   border: none;
   cursor: pointer;
 font-size: 32px;

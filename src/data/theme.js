@@ -7,8 +7,11 @@ const firstTheme = {
     mainBackground: 'hsl(222, 26%, 31%)',
     windowBackground: 'hsl(224, 36%, 15%)',
     keyboardBackground: 'hsl(223, 31%, 20%)',
+    keyBackground: 'hsl(30, 25%, 89%)',
 
-    darkBlueKeyBackground: 'hsl(225, 21%, 49%)',
+
+
+    //variables below
     darkBlueKeyShadow: 'hsl(224, 28%, 35%)',
     redColor: 'hsl(6, 63%, 50%)',
     darkRed: 'hsl(6, 70%, 34%)',
@@ -28,12 +31,11 @@ const secondTheme = {
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
-//    colors theme 1
-//    main background
+
     mainBackground: 'hsl(30, 25%, 89%)',
     windowBackground: 'hsl(0, 0%, 93%)',
     keyboardBackground: 'hsl(0, 5%, 81%)',
-
+    keyBackground: 'hsl(30, 25%, 89%)',
 
 //    toggle background, keypad background
     veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
@@ -57,11 +59,11 @@ const thirdTheme = {
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
-//    colors theme 1
-//    main background
+
     mainBackground: 'hsl(268, 75%, 9%)',
     windowBackground: 'hsl(268, 71%, 12%)',
     keyboardBackground: 'hsl(268, 71%, 12%)',
+    keyBackground: 'hsl(281, 89%, 26%)',
 
 
 //    toggle background, keypad background

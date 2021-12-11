@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const StyledCalculationButton = styled.button`
-  background: ${({symbol, theme}) => symbol === '=' ? theme.redColor : theme.lightGrayKeyBackground};
+  background: ${({symbol, theme}) => symbol === '=' ? theme.redColor : theme.keyBackground};
   border: none;
   cursor: pointer;
   font-size: 32px;
