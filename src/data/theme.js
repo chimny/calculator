@@ -7,23 +7,20 @@ const firstTheme = {
     mainBackground: 'hsl(222, 26%, 31%)',
     windowBackground: 'hsl(224, 36%, 15%)',
     keyboardBackground: 'hsl(223, 31%, 20%)',
-    keyBackground: 'hsl(30, 25%, 89%)',
+    numButtonBackground: 'hsl(30, 25%, 89%)',
+    numButtonShadow: 'hsl(224, 28%, 35%)',
+    fontColor: 'hsl(221, 14%, 31%)',
+
+    equalButtonBackground: 'hsl(6, 63%, 50%)',
+    equalButtonFontColor: 'hsl(0,0%,100%)',
+    equalButtonShadow: 'hsl(6, 70%, 34%)',
 
 
+    clearButtonFontColor: 'hsl(0, 0%, 100%)',
+    clearButtonBackground: 'hsl(225, 21%, 49%)',
+    clearButtonShadow: 'hsl(224, 28%, 35%)',
 
-    //variables below
-    darkBlueKeyShadow: 'hsl(224, 28%, 35%)',
-    redColor: 'hsl(6, 63%, 50%)',
-    darkRed: 'hsl(6, 70%, 34%)',
-    lightGrayKeyBackground: 'hsl(30, 25%, 89%)',
-    grayOrangeKeyShadow: 'hsl(28, 16%, 65%)',
-    darkGrayBlue: 'hsl(221, 14%, 31%)',
-    whiteColor: 'hsl(0, 0%, 100%)',
 
-//    text below
-//    keys below
-//    toggle background, keypad background
-    veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
 }
 
 const secondTheme = {
@@ -36,20 +33,17 @@ const secondTheme = {
     windowBackground: 'hsl(0, 0%, 93%)',
     keyboardBackground: 'hsl(0, 5%, 81%)',
     keyBackground: 'hsl(30, 25%, 89%)',
+    numButtonShadow: 'hsl(185, 58%, 25%)',
+    numButtonBackground: 'hsl(30, 25%, 89%)',
+    fontColor: 'hsl(60, 10%, 19%)',
+    equalButtonBackground: 'hsl(25, 98%, 40%)',
+    equalButtonFontColor: 'hsl(0,0%,100%)',
+    equalButtonShadow: 'hsl(25, 99%, 27%)',
 
-//    toggle background, keypad background
-    veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
+    clearButtonFontColor: 'hsl(0, 0%, 100%)',
+    clearButtonBackground: 'hsl(185, 42%, 37%)',
+    clearButtonShadow: 'hsl(185, 58%, 25%)',
 
-//    keys below
-    darkBlueKeyBackground: 'hsl(225, 21%, 49%)',
-    darkBlueKeyShadow: 'hsl(96,100%,50%)',
-    redColor: 'hsl(6, 63%, 50%)',
-    darkRed: 'hsl(6, 70%, 34%)',
-    lightGrayKeyBackground: 'hsl(30, 25%, 89%)',
-    grayOrangeKeyShadow: 'hsl(28, 16%, 65%)',
-//    text below
-    darkGrayBlue: 'hsl(221, 14%, 31%)',
-    whiteColor: 'hsl(0, 0%, 100%)',
 
 }
 
@@ -64,22 +58,17 @@ const thirdTheme = {
     windowBackground: 'hsl(268, 71%, 12%)',
     keyboardBackground: 'hsl(268, 71%, 12%)',
     keyBackground: 'hsl(281, 89%, 26%)',
+    numButtonShadow: 'hsl(285, 91%, 52%)',
+    numButtonBackground: 'hsl(281, 89%, 26%)',
+    fontColor: 'hsl(52, 100%, 62%)',
+    equalButtonBackground: 'hsl(176, 100%, 44%)',
+    equalButtonFontColor: 'hsl(198, 20%, 13%)',
+    equalButtonShadow: 'hsl(177, 92%, 70%)',
 
+    clearButtonFontColor: 'hsl(0, 0%, 100%)',
+    clearButtonBackground: 'hsl(281, 89%, 26%)',
+    clearButtonShadow: 'hsl(285, 91%, 52%)',
 
-//    toggle background, keypad background
-    veryDarkDesaturatedBlueKeypad: 'hsl(223, 31%, 20%)',
-    veryDarkDesaturatedBlueKeypadScreenBGC: 'hsl(224, 36%, 15%)',
-
-//    keys below
-    darkBlueKeyBackground: 'hsl(225, 21%, 49%)',
-    darkBlueKeyShadow: 'hsl(73,100%,50%)',
-    redColor: 'hsl(6, 63%, 50%)',
-    darkRed: 'hsl(270,19%,10%)',
-    lightGrayKeyBackground: 'hsl(30, 25%, 89%)',
-    grayOrangeKeyShadow: 'hsl(28, 16%, 65%)',
-//    text below
-    darkGrayBlue: 'hsl(221, 14%, 31%)',
-    whiteColor: 'hsl(0, 0%, 100%)',
 
 }
 
