@@ -10,7 +10,7 @@ export const StyledCalcWindow = styled.div`
   height: 124px;
   padding-right: 16px;
   width: 100%;
-  color: white;
+  color: ${({theme} )=> theme.resultFontColor};;
 
   & p {
     display: block;

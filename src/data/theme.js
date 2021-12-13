@@ -1,5 +1,6 @@
 const firstTheme = {
     //containers
+    themeName: 'firstTheme',
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
@@ -10,7 +11,7 @@ const firstTheme = {
     numButtonBackground: 'hsl(30, 25%, 89%)',
     numButtonShadow: 'hsl(224, 28%, 35%)',
     fontColor: 'hsl(221, 14%, 31%)',
-
+    resultFontColor: 'hsl(0,0%,100%)',
     equalButtonBackground: 'hsl(6, 63%, 50%)',
     equalButtonFontColor: 'hsl(0,0%,100%)',
     equalButtonShadow: 'hsl(6, 70%, 34%)',
@@ -25,6 +26,7 @@ const firstTheme = {
 
 const secondTheme = {
     //containers
+    themeName: 'secondTheme',
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
@@ -36,6 +38,7 @@ const secondTheme = {
     numButtonShadow: 'hsl(185, 58%, 25%)',
     numButtonBackground: 'hsl(30, 25%, 89%)',
     fontColor: 'hsl(60, 10%, 19%)',
+    resultFontColor: 'hsl(60, 10%, 19%)',
     equalButtonBackground: 'hsl(25, 98%, 40%)',
     equalButtonFontColor: 'hsl(0,0%,100%)',
     equalButtonShadow: 'hsl(25, 99%, 27%)',
@@ -50,6 +53,7 @@ const secondTheme = {
 
 const thirdTheme = {
     //containers
+    themeName: 'thirdTheme',
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
@@ -61,6 +65,7 @@ const thirdTheme = {
     numButtonShadow: 'hsl(285, 91%, 52%)',
     numButtonBackground: 'hsl(281, 89%, 26%)',
     fontColor: 'hsl(52, 100%, 62%)',
+    resultFontColor: 'hsl(52, 100%, 62%)',
     equalButtonBackground: 'hsl(176, 100%, 44%)',
     equalButtonFontColor: 'hsl(198, 20%, 13%)',
     equalButtonShadow: 'hsl(177, 92%, 70%)',
