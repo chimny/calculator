@@ -5,5 +5,6 @@ export const StyledCalcHeader = styled.div`
   justify-content: space-between;
   padding-right: 12px;
   background: ${({theme}) => theme.mainBackground};
+  color: ${({theme}) => theme.headerFontColor};
 }
 `

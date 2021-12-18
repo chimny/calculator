@@ -4,7 +4,7 @@ const firstTheme = {
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
-
+    headerFontColor: 'hsl(0, 0%, 100%)',
     mainBackground: 'hsl(222, 26%, 31%)',
     windowBackground: 'hsl(224, 36%, 15%)',
     keyboardBackground: 'hsl(223, 31%, 20%)',
@@ -30,7 +30,7 @@ const secondTheme = {
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
-
+    headerFontColor: 'hsl(60, 10%, 19%)',
     mainBackground: 'hsl(30, 25%, 89%)',
     windowBackground: 'hsl(0, 0%, 93%)',
     keyboardBackground: 'hsl(0, 5%, 81%)',
@@ -57,7 +57,7 @@ const thirdTheme = {
     mobileWidth: '375px',
     desktopWidth: '1440px',
 
-
+    headerFontColor: 'hsl(52, 100%, 62%)',
     mainBackground: 'hsl(268, 75%, 9%)',
     windowBackground: 'hsl(268, 71%, 12%)',
     keyboardBackground: 'hsl(268, 71%, 12%)',
