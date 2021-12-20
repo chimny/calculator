@@ -1,5 +1,5 @@
 import {StyledCalcHeader} from "../../styles/StyledCalcHeader";
-import {SwitchToggler} from "./SwitchToggler";
+import {SwitchToggle} from "./SwitchToggle";
 
 
 export const CalcHeader = () => {
@@ -7,7 +7,7 @@ export const CalcHeader = () => {
     return (
         <StyledCalcHeader>
             <p>calc</p>
-            <SwitchToggler/>
+            <SwitchToggle/>
         </StyledCalcHeader>
     )
 }
