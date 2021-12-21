@@ -3,80 +3,90 @@ import styled from "styled-components";
 
 export const StyledSwitchToggle = styled.div`/* The container */
 
-  //width: 80%;
   display: flex;
+  padding-right: 0.5rem;
+  margin-right: 0;
   align-items: center;
-  justify-content: end;
-  padding-right: 1rem;
-  
-  .container {
+  justify-content: center;
+
+
+  div {
+    background: ${({theme}) => theme.windowBackground};
     display: flex;
-    flex-direction: column;
     position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+    padding-left: 2rem;
+    width: 4rem;
+    border-radius: 12px;
 
-  /* Hide the browser's default radio button */
+    .container {
+      display: flex;
+      height: 1rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: relative;
+      padding-left: 35px;
+      //margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+    }
 
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
+    /* Hide the browser's default radio button */
 
-  /* Create a custom radio button */
+    .container input {
 
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-    border-radius: 50%;
-  }
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
 
-  /* On mouse-over, add a grey background color */
+    /* Create a custom radio button */
 
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
+    .themeNumber {
+      position: absolute;
+      top: -1rem;
+      left: 0;
+      transform: translate(50%, 0);
+    }
 
-  /* When the radio button is checked, add a blue background */
+    .checkmark {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      //transform: translate(0%, 50%);
+      height: 12px;
+      width: 12px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
 
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
+    /* On mouse-over, add a grey background color */
 
-  /* Create the indicator (the dot/circle - hidden when not checked) */
+    .container:hover input ~ .checkmark {
+      background-color: #ccc;
+    }
 
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
+    /* When the radio button is checked, add a blue background */
 
-  /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark {
+      background-color: ${({theme}) => theme.equalButtonBackground};
+    }
 
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
+    /* Create the indicator (the dot/circle - hidden when not checked) */
 
-  /* Style the indicator (dot/circle) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
 
-  .container .checkmark:after {
-    top: 9px;
-    left: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: white;
+    /* Show the indicator (dot/circle) when checked */
+
+    .container input:checked ~ .checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+
+
   }
 `
