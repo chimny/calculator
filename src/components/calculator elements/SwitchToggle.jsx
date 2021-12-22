@@ -14,6 +14,7 @@ export const SwitchToggle = () => {
         <StyledSwitchToggle>
             <h2>theme</h2>
             <div className='switchBox'>
+
                 <label className='container first' htmlFor='firstTheme'>
                     <input id='firstTheme' type="checkbox" checked={activeStatus === "firstTheme" ?? false}
                            onChange={() => setThemeFunction('firstTheme')}/>
