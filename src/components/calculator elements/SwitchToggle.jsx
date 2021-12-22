@@ -13,26 +13,26 @@ export const SwitchToggle = () => {
     return (
         <StyledSwitchToggle>
             <h2>theme</h2>
-            <div>
-                <label className='container' htmlFor='firstTheme'>
-                    <span className='themeNumber'>1</span>
+            <div className='switchBox'>
+                <label className='container first' htmlFor='firstTheme'>
                     <input id='firstTheme' type="checkbox" checked={activeStatus === "firstTheme" ?? false}
                            onChange={() => setThemeFunction('firstTheme')}/>
                     <span className="checkmark"></span>
                 </label>
 
 
-                <label className='container' htmlFor='secondTheme'><span className='themeNumber'>2</span>
+                <label className='container second' htmlFor='secondTheme'>
                     <input id='secondTheme' type="checkbox" checked={activeStatus === "secondTheme" ?? false}
                            onChange={() => setThemeFunction('secondTheme')}/>
                     <span className="checkmark"></span>
                 </label>
 
-                <label className='container' htmlFor='thirdTheme'><span className='themeNumber'>3</span>
+                <label className='container third' htmlFor='thirdTheme'>
                     <input id='thirdTheme' type="checkbox" checked={activeStatus === "thirdTheme" ?? false}
                            onChange={() => setThemeFunction('thirdTheme')}/>
                     <span className="checkmark"></span>
                 </label>
+
             </div>
         </StyledSwitchToggle>
     )

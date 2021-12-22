@@ -4,38 +4,61 @@ import styled from "styled-components";
 export const StyledSwitchToggle = styled.div`/* The container */
 
   display: flex;
-  padding-right: 0.5rem;
-  margin-right: 0;
   align-items: center;
   justify-content: center;
 
 
-  div {
+  div.switchBox {
+    //margin-left: 2rem;
     background: ${({theme}) => theme.windowBackground};
-    display: flex;
     position: relative;
-    padding-left: 2rem;
-    width: 4rem;
+    width: 12rem;
     border-radius: 12px;
+    height: 2rem;
+
 
     .container {
-      display: flex;
-      height: 1rem;
-      flex-direction: row;
-      flex-wrap: wrap;
       position: relative;
-      padding-left: 35px;
-      //margin-bottom: 12px;
       cursor: pointer;
-      font-size: 22px;
+    }
+
+
+    .first {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .second {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+    }
+
+    .third {
+      position: absolute;
+      right: 0%;
+      top: 0%;
+      transform: translateX(50%);
+    }
+
+
+    .checkmark {
+      position: absolute;
+      height: 12px;
+      width: 12px;
+      background-color: #eee;
+      border-radius: 50%;
     }
 
     /* Hide the browser's default radio button */
 
     .container input {
-
+      margin: 0;
+      padding: 0;
       position: absolute;
-      opacity: 0;
+      opacity: 1;
       cursor: pointer;
     }
 
@@ -48,16 +71,6 @@ export const StyledSwitchToggle = styled.div`/* The container */
       transform: translate(50%, 0);
     }
 
-    .checkmark {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      //transform: translate(0%, 50%);
-      height: 12px;
-      width: 12px;
-      background-color: #eee;
-      border-radius: 50%;
-    }
 
     /* On mouse-over, add a grey background color */
 
@@ -71,21 +84,13 @@ export const StyledSwitchToggle = styled.div`/* The container */
       background-color: ${({theme}) => theme.equalButtonBackground};
     }
 
-    /* Create the indicator (the dot/circle - hidden when not checked) */
-
-    .checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
+ 
 
     /* Show the indicator (dot/circle) when checked */
 
     .container input:checked ~ .checkmark:after {
       display: block;
     }
-
-    /* Style the indicator (dot/circle) */
 
 
   }
