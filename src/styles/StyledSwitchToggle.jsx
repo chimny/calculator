@@ -37,10 +37,10 @@ export const StyledSwitchToggle = styled.div`/* The container */
     }
 
     .third {
-      position: absolute;
-      right: 0%;
+      //position: absolute;
+      right: -50%;
       top: 0%;
-      transform: translateX(50%);
+      //transform: translateX(50%);
     }
 
 
