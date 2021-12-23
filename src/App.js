@@ -14,7 +14,7 @@ function App() {
     const dispatch = useDispatch();
     const inputValue = useSelector((state => state.inputValue.value));
     const {operator, result} = useSelector((state => state.operationSequence));
-const theme = useSelector((state => state.theme));
+    const theme = useSelector((state => state.theme));
 
     const handleKeyDown = (e) => {
         const numberSymbols = NUMBERS.map(({num}) => num);
@@ -34,6 +34,10 @@ const theme = useSelector((state => state.theme));
             window.removeEventListener('keydown', handleKeyDown);
         };
     });
+
+    useEffect(() => {
+        localStorage.setItem("theme", JSON.stringify(theme));
+    }, [theme]);
 
 
     return (

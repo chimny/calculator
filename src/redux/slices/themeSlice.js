@@ -2,7 +2,10 @@ import {createSlice} from "@reduxjs/toolkit";
 import {firstTheme, secondTheme, thirdTheme} from '../../data/theme';
 
 
-const initialState = {...firstTheme};
+const localData = {...JSON.parse(localStorage.getItem('theme'))};
+
+
+const initialState = localData ?? {...firstTheme};
 
 export const themeSlice = createSlice({
     name: "themeSlice",
@@ -11,11 +14,9 @@ export const themeSlice = createSlice({
         setTheme(state, action) {
 
 
-
-
             switch (action.payload) {
                 case 'firstTheme':
-                   return {...firstTheme};
+                    return {...firstTheme};
                 case 'secondTheme':
                     return {...secondTheme}
                 case 'thirdTheme':
