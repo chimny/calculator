@@ -3,103 +3,71 @@ import styled from "styled-components";
 
 export const StyledSwitchToggle = styled.div`/* The container */
 
-   display: flex;
-  // align-items: center;
-  // //justify-content: center;
-  //
-  //
-  div.switchBox {
-    margin-left: 2rem;
-    display: flex;
-    align-items: stretch;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: space-between;
-    background: ${({theme}) => theme.windowBackground};
-    //position: relative;
-    width: 12rem;
-    border-radius: 12px;
-    min-height: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 20px);
+  margin: 0;
+  padding: 0;
+  justify-items: center;
+  align-items: center;
+
+  grid-template-areas: 
+    " . . . firstOption secondOption thirdOption"
+    "themeSign themeSign themeSign switchbox switchbox switchbox";
+
+  h2 {
+    grid-area: themeSign;
   }
-  //
-     .container {
-       position: relative;
-       cursor: pointer;
-     }
-  //
-  //
-  //   .first {
-  //     //position: absolute;
-  //     //left: 0;
-  //     //top: 0;
-  //   }
-  //
-  //   .second {
-  //     //position: absolute;
-  //     //left: 50%;
-  //     //transform: translateX(-50%);
-  //     //top: 0;
-  //   }
-  //
-  //   .third {
-  //     //position: absolute;
-  //     //right: -50%;
-  //     //top: 0%;
-  //     //transform: translateX(50%);
-  //   }
-  //
-  //
-     .checkmark {
-       position: absolute;
-       top:50%;
-       left:50%;
-       height: 15px;
-       width: 15px;
-       background-color: #eee;
-       border-radius: 50%;
-       transform: translate(-50%,-50%);
-     }
-  //
-  //   /* Hide the browser's default radio button */
-  //
-     .container input {
-       margin: 0;
-       padding: 0;
-       position: relative;
-       opacity: 1;
-       cursor: pointer;
-     }
-  //
-  //   /* Create a custom radio button */
-  //
-  //   //.themeNumber {
-  //   //  position: absolute;
-  //   //  top: -1rem;
-  //   //  left: 0;
-  //   //  transform: translate(50%, 0);
-  //   //}
-  //
-  //
-  //   /* On mouse-over, add a grey background color */
-  //
-  //   .container:hover input ~ .checkmark {
-  //     background-color: #ccc;
-  //   }
 
-    /* When the radio button is checked, add a blue background */
+  span {
+    justify-self: center;
+  }
 
-    .container input:checked ~ .checkmark {
+  span.firstOption {
+    grid-area: firstOption;
+
+  }
+
+  span.secondOption {
+    grid-area: secondOption;
+  }
+
+  span.thirdOption {
+    grid-area: thirdOption;
+  }
+
+
+  .switchBox {
+    background: ${({theme}) => theme.windowBackground};
+    grid-area: switchbox;
+    height: 22px;
+    border-radius: 18px;
+    display: flex;
+  }
+
+  
+  label.container{
+    position: relative;
+    cursor: pointer;
+    input{
+      cursor: pointer;
+      opacity: 0;
+    }
+    
+    .checkmark {
+      position: absolute;
+      top:50%;
+      left:50%;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    input:checked ~ .checkmark {
       background-color: ${({theme}) => theme.equalButtonBackground};
     }
-
- 
-
-    /* Show the indicator (dot/circle) when checked */
-
-    .container input:checked ~ .checkmark:after {
-      display: block;
-    }
-
-
+    
   }
+
 `
