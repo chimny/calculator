@@ -28,8 +28,8 @@ export const calculationSlice = createSlice({
         },
         addOperator(state, action) {
             if (action.payload === "=") return;
-            state.secondNumber = '';
-            state.result = '';
+            state.secondNumber = null;
+            state.result = null;
             state.operator = action.payload;
         },
         operationSymbols(state, action) {
@@ -59,12 +59,7 @@ export const calculationSlice = createSlice({
             }
         },
         resetOperation(state) {
-            return state = {
-                firstNumber: null,
-                operator: null,
-                secondNumber: null,
-                result: null,
-            }
+            return state = initialState
         }
     },
 });
