@@ -1,13 +1,4 @@
-import {render, screen} from '@testing-library/react';
-import App from './App';
-
-test('renders learn react link', () => {
-    render(<App/>);
-    const linkElement = screen.getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
-});
-
-import reducer, { todoAdded } from './redux/slices/testSlice'
+import reducer, { todoAdded } from '../redux/slices/testSlice'
 
 test('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual([

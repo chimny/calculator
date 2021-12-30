@@ -12,7 +12,7 @@ const todosSlice = createSlice({
     name: 'todos',
     initialState,
     reducers: {
-        todoAdded(state, action: PayloadAction<string>) {
+        todoAdded(state, action) {
             state.push({
                 id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
                 completed: false,
