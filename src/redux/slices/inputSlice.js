@@ -8,10 +8,11 @@ export const inputSlice = createSlice({
     name: 'calcInput',
     initialState,
     reducers: {
+        //@todo refactor update value - what's the purpose??
         updateValue: (state, action) => {
             const prevState = state.value
             const newInput = Number(action.payload);
-            if (prevState === '' && action.payload === '-'){
+            if (prevState === '' ){
                 state.value = action.payload
             }
             else if (!Number.isNaN(newInput)) {
@@ -21,10 +22,14 @@ export const inputSlice = createSlice({
             }
         },
         addNumber: (state, action) => {
-            state.value += String(action.payload)
+            if(Number(action.payload) || action.payload==='0' && state.value !== '0'){
+                state.value += String(action.payload)
+            }
         },
         removeNumber: (state) => {
-            state.value = '';
+            const prevState = state.value;
+            state.value = prevState.slice(0, prevState.length - 1)
+
         },
         clearValue: (state) => {
             state.value = '';

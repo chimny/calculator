@@ -1,5 +1,5 @@
-import reducer, {setTheme} from '../redux/slices/themeSlice';
-import {firstTheme, secondTheme, thirdTheme} from '../data/theme';
+import reducer, {setTheme} from '../../redux/slices/themeSlice';
+import {firstTheme, secondTheme, thirdTheme} from '../../data/theme';
 
 
 test('theme should be set to second theme', () => {
