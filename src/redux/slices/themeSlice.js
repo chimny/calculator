@@ -5,7 +5,14 @@ const {firstTheme, secondTheme, thirdTheme} = require('../../data/theme') ;
 const localData = {...JSON.parse(localStorage.getItem('theme'))};
 
 
-const initialState = localData ?? {...firstTheme};
+
+//@todo theme initial construction with empty local storage
+const initialState = localData.themeName ? localData : {...firstTheme};
+
+
+
+
+
 
 export const themeSlice = createSlice({
     name: "themeSlice",

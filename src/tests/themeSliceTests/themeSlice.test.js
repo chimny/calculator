@@ -2,6 +2,8 @@ import reducer, {setTheme} from '../../redux/slices/themeSlice';
 import {firstTheme, secondTheme, thirdTheme} from '../../data/theme';
 
 
+
+
 test('theme should be set to second theme', () => {
 
     const previousState = {...firstTheme};
@@ -34,5 +36,14 @@ test('should show state from local storage', () => {
     const previousState = localData ?? {...firstTheme};
 
     expect(reducer(previousState, {})).toEqual(localData
+    )
+});
+
+test('it should display firstTheme if the localStorage keeps the wrong data', () => {
+
+    const localData = {...JSON.parse(localStorage.getItem('theme'))};
+    const defaultState = {...firstTheme};
+
+    expect(reducer(defaultState, setTheme(localData.themeName))).toEqual(defaultState
     )
 });

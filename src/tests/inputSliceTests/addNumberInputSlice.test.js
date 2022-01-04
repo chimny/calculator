@@ -35,15 +35,30 @@ test('new numbers should be added', () => {
     );
 })
 
+test('zero should be replaced by new number', () => {
+    const previousState = {
+        value: '0',
+    };
+    expect(reducer(previousState, addNumber('1'))).toEqual(
+        {
+            value: '1',
+        }
+    );
+    expect(reducer(previousState, addNumber('774'))).toEqual(
+        {
+            value: '774',
+        }
+    );
+})
+
+
 
 test('zero should be hit once if it\'s the only value ', () => {
     const previousState = {
         value: '0',
     };
     expect(reducer(previousState, addNumber('0'))).toEqual(
-        {
-            value: '0',
-        }
+        previousState
     );
 
 })

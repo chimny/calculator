@@ -12,18 +12,24 @@ export const inputSlice = createSlice({
         updateValue: (state, action) => {
             const prevState = state.value
             const newInput = Number(action.payload);
-            if (prevState === '' ){
+            if (prevState === '') {
                 state.value = action.payload
-            }
-            else if (!Number.isNaN(newInput)) {
+            } else if (!Number.isNaN(newInput)) {
                 state.value = action.payload;
-            }   else if (action.payload === '.') {
+            } else if (action.payload === '.') {
                 state.value = prevState + action.payload
             }
         },
         addNumber: (state, action) => {
-            if(Number(action.payload) || action.payload==='0' && state.value !== '0'){
-                state.value += String(action.payload)
+            const addedNumber = String(action.payload);
+            if (state.value === '0' && Number(addedNumber)) {
+                state.value = addedNumber
+            } else if (Number(addedNumber) ) {
+                state.value += addedNumber
+            }
+            else if (addedNumber === '0' && state.value !== '0') {
+                state.value += addedNumber
+
             }
         },
         removeNumber: (state) => {
