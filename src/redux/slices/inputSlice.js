@@ -9,7 +9,7 @@ export const inputSlice = createSlice({
     initialState,
     reducers: {
         //@todo refactor update value - what's the purpose??
-        updateValue: (state, action) => {
+        addDot: (state, action) => {
             const prevState = state.value
             const newInput = Number(action.payload);
             if (prevState === '') {
@@ -44,7 +44,7 @@ export const inputSlice = createSlice({
 })
 
 
-export const {updateValue, addNumber, removeNumber, clearValue} = inputSlice.actions;
+export const {addDot, addNumber, removeNumber, clearValue} = inputSlice.actions;
 
 export default inputSlice.reducer;
 
