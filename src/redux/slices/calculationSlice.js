@@ -18,27 +18,23 @@ export const calculationSlice = createSlice({
     reducers: {
         inputValueAssignment: {
             reducer: (state, action) => {
+                const {firstNumber, result} = state;
+
                 if (action.payload) {
-                    if (state.firstNumber === null) {
-                        state.firstNumber = action.payload;
-                    } else {
-                        state.secondNumber = action.payload;
-                    }
+                   return firstNumber === null ?  {...state,firstNumber:action.payload} : {...state, secondNumber:action.payload}
                 } else {
-                    if (state.result) {
+                    if (result) {
                         state.firstNumber = state.result;
                     }
                 }
             },
             prepare: (inputValue) => {
-                return {payload: inputValue[inputValue.length - 1] === '.' ? inputValue.slice(0, -1) : inputValue};
+                return {payload: inputValue[inputValue.length - 1] === '.' ? Number(inputValue.slice(0, -1)) : Number(inputValue)};
             },
         },
         addOperator(state, action) {
             if (action.payload === "=") return;
-            state.secondNumber = null;
-            state.result = null;
-            state.operator = action.payload;
+            return {...state, secondNumber:null, result:null, operator: action.payload};
         },
         operationSymbols(state, action) {
             const inputValue = Number(action.payload);
