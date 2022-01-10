@@ -1,4 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {inputValueAssignment} from './calculationSlice';
+
 
 const initialState = {
     value: '',
@@ -42,6 +44,11 @@ export const inputSlice = createSlice({
         clearValue: (state) => {
             state.value = '';
         }
+    },
+    extraReducers: builder =>  {
+        builder.addCase(inputValueAssignment, (state,action)=>{
+            state.value = ''
+        })
     }
 })
 

@@ -1,6 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 
+
+
 const initialState = {
     firstNumber: null,
     operator: null,
@@ -8,23 +10,29 @@ const initialState = {
     result: null,
 };
 
+
+
 export const calculationSlice = createSlice({
     name: "calculationSlice",
     initialState,
     reducers: {
-        numberCalcValue(state, action) {
-            if (action.payload) {
-                if (state.firstNumber === null) {
-                    state.firstNumber = action.payload;
+        inputValueAssignment: {
+            reducer: (state, action) => {
+                if (action.payload) {
+                    if (state.firstNumber === null) {
+                        state.firstNumber = action.payload;
+                    } else {
+                        state.secondNumber = action.payload;
+                    }
                 } else {
-                    state.secondNumber = action.payload;
+                    if (state.result) {
+                        state.firstNumber = state.result;
+                    }
                 }
-            } else {
-                if (state.result) {
-                    state.firstNumber = state.result;
-                }
-
-            }
+            },
+            prepare: (inputValue) => {
+                return {payload: inputValue[inputValue.length - 1] === '.' ? inputValue.slice(0, -1) : inputValue};
+            },
         },
         addOperator(state, action) {
             if (action.payload === "=") return;
@@ -62,8 +70,9 @@ export const calculationSlice = createSlice({
             return state = initialState
         }
     },
+
 });
 
-export const {numberCalcValue, addOperator, operationSymbols, resetOperation} =
+export const {inputValueAssignment, addOperator, operationSymbols, resetOperation} =
     calculationSlice.actions;
 export default calculationSlice.reducer;
