@@ -12,10 +12,10 @@ export function updateInput(currentInput, symbol, operator, dispatch, result) {
     }
 
     if (localSymbol === '.') {
-        if (currentInput.includes('.') || currentInput.length === 0) {
+        if (currentInput.includes('.') ) {
             return
         }
-        dispatch(addDot(localSymbol));
+        dispatch(addDot());
     } else if (localSymbol === '-' && currentInput.length === 0 && result === '') {
         dispatch(addNumber(symbol))
     } else {
