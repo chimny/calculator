@@ -1,15 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 
-
-
 const initialState = {
     firstNumber: null,
     operator: null,
     secondNumber: null,
     result: null,
 };
-
 
 
 export const calculationSlice = createSlice({
@@ -21,7 +18,10 @@ export const calculationSlice = createSlice({
                 const {firstNumber, result} = state;
 
                 if (action.payload) {
-                   return firstNumber === null ?  {...state,firstNumber:action.payload} : {...state, secondNumber:action.payload}
+                    return firstNumber === null ? {...state, firstNumber: action.payload} : {
+                        ...state,
+                        secondNumber: action.payload
+                    }
                 } else {
                     if (result) {
                         state.firstNumber = state.result;
@@ -34,8 +34,8 @@ export const calculationSlice = createSlice({
         },
         addOperator(state, action) {
             if (action.payload === "=") return;
-            if (!state.firstNumber)  return {...state, firstNumber: 0, operator: action.payload};
-            return {...state, operator: action.payload};
+            if (!state.firstNumber) return {...state, firstNumber: 0, operator: action.payload};
+            return {...state, secondNumber: null, result:null, operator: action.payload};
         },
         calculateResult(state, action) {
             const inputValue = Number(action.payload);
