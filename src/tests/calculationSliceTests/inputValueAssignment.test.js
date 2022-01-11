@@ -21,16 +21,14 @@ test('it should update firstNumber as a number', () => {
 test('it should update firstNumber as a number', () => {
 
     const previousState = {
-        firstNumber: '442',
+        firstNumber: 111,
         operator: '+',
-        secondNumber: null,
+        secondNumber: 777,
         result: null,
     };
 
     expect(reducer(previousState, inputValueAssignment('221'))).toEqual(
-
     {...previousState, secondNumber:221}
-
     );
 
 })

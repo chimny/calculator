@@ -45,7 +45,7 @@ export const inputSlice = createSlice({
             state.value = '';
         }
     },
-    extraReducers: builder =>  {
+    extraReducers: (builder) =>  {
         builder.addCase(inputValueAssignment, (state,action)=>{
           return {...state,value:''}
         })
