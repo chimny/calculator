@@ -1,6 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {addNumber} from "./inputSlice";
 
 
+//@todo if there is result and addNumber occurs, initialState should be cleared
 
 
 const initialState = {
@@ -9,7 +11,6 @@ const initialState = {
     secondNumber: null,
     result: null,
 };
-
 
 
 export const calculationSlice = createSlice({
@@ -21,7 +22,10 @@ export const calculationSlice = createSlice({
                 const {firstNumber, result} = state;
 
                 if (action.payload) {
-                   return firstNumber === null ?  {...state,firstNumber:action.payload} : {...state, secondNumber:action.payload}
+                    return firstNumber === null ? {...state, firstNumber: action.payload} : {
+                        ...state,
+                        secondNumber: action.payload
+                    }
                 } else {
                     if (result) {
                         state.firstNumber = state.result;
@@ -34,29 +38,28 @@ export const calculationSlice = createSlice({
         },
         addOperator(state, action) {
             if (action.payload === "=") return;
-            return {...state, secondNumber:null, result:null, operator: action.payload};
+            return {...state, secondNumber: null, result: null, operator: action.payload};
         },
-        operationSymbols(state, action) {
+        calculateResult(state, action) {
             const inputValue = Number(action.payload);
             const {firstNumber, operator, result, secondNumber} = state;
-            const firstNumberEnc = Number(firstNumber);
-            let secondNumberEnc = inputValue;
+            let secondValue = inputValue;
             if (result || result === 0) {
                 state.firstNumber = state.result;
-                secondNumberEnc = Number(secondNumber);
+                secondValue = Number(secondNumber);
             }
             switch (operator) {
                 case "+":
-                    state.result = firstNumberEnc + secondNumberEnc;
+                    state.result = firstNumber + secondValue;
                     break;
                 case "-":
-                    state.result = firstNumberEnc - secondNumberEnc;
+                    state.result = firstNumber - secondValue;
                     break;
                 case "*":
-                    state.result = firstNumberEnc * secondNumberEnc;
+                    state.result = firstNumber * secondValue;
                     break;
                 case "/":
-                    state.result = firstNumberEnc / secondNumberEnc;
+                    state.result = firstNumber / secondValue;
                     break;
                 default:
                     return state;
@@ -65,10 +68,11 @@ export const calculationSlice = createSlice({
         resetOperation(state) {
             return state = initialState
         }
-    },
+    }
+
 
 });
 
-export const {inputValueAssignment, addOperator, operationSymbols, resetOperation} =
+export const {inputValueAssignment, addOperator, calculateResult, resetOperation} =
     calculationSlice.actions;
 export default calculationSlice.reducer;

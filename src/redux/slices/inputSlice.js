@@ -10,32 +10,31 @@ export const inputSlice = createSlice({
     name: 'calcInput',
     initialState,
     reducers: {
-        addDot: (state, action) => {
+        addDot: (state) => {
             const prevState = state.value
 
             if (prevState === '') {
                 state.value = '0.'
-            }
-            else if( prevState.includes('.')){
+            } else if (prevState.includes('.')) {
                 return prevState
-            }
-            else {
+            } else {
                 state.value = prevState + '.'
             }
 
         },
-        addNumber: (state, action) => {
-            const addedNumber = String(action.payload);
-            if (state.value === '0' && Number(addedNumber)) {
-                state.value = addedNumber
-            } else if (Number(addedNumber) ) {
-                state.value += addedNumber
-            }
-            else if (addedNumber === '0' && state.value !== '0') {
-                state.value += addedNumber
-
+        addNumber: {
+            reducer: (state, action) => {
+                const addedNumber = String(action.payload);
+                if (state.value === '0' && Number(addedNumber)) {
+                    state.value = addedNumber
+                } else if (Number(addedNumber)) {
+                    state.value += addedNumber
+                } else if (addedNumber === '0' && state.value !== '0') {
+                    state.value += addedNumber
+                }
             }
         },
+        reducer: {},
         removeNumber: (state) => {
             const prevState = state.value;
             state.value = prevState.slice(0, prevState.length - 1)
@@ -45,8 +44,8 @@ export const inputSlice = createSlice({
             state.value = '';
         }
     },
-    extraReducers: builder =>  {
-        builder.addCase(inputValueAssignment, (state,action)=>{
+    extraReducers: builder => {
+        builder.addCase(inputValueAssignment, (state, action) => {
             state.value = ''
         })
     }

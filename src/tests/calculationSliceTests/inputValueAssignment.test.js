@@ -18,10 +18,10 @@ test('it should update firstNumber as a number', () => {
 
 })
 
-test('it should update firstNumber as a number', () => {
+test('it should update secondNumber as a number', () => {
 
     const previousState = {
-        firstNumber: '442',
+        firstNumber: 442,
         operator: '+',
         secondNumber: null,
         result: null,
@@ -34,3 +34,22 @@ test('it should update firstNumber as a number', () => {
     );
 
 })
+
+
+test('it should update secondNumber without a dot', () => {
+
+    const previousState = {
+        firstNumber: 442,
+        operator: '+',
+        secondNumber: null,
+        result: null,
+    };
+
+    expect(reducer(previousState, inputValueAssignment('221.'))).toEqual(
+
+        {...previousState, secondNumber:221}
+
+    );
+
+})
+
