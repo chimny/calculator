@@ -3,7 +3,7 @@ import {Wrapper} from "./styles/Wrapper";
 import {GlobalStyle} from "./styles/GlobalStyle";
 import {useEffect} from "react";
 import {NUMBERS, OPERATION_SYMBOLS} from "./data/symbols";
-import {addNumber} from "./redux/slices/inputSlice";
+import {addNumber} from "./redux/actions/addNumber";
 import {useDispatch, useSelector} from "react-redux";
 
 import {ThemeProvider} from "styled-components";

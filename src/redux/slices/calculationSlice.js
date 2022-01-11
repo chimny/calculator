@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {addNumber} from "../actions/addNumber";
 
 
 const initialState = {
@@ -35,7 +36,7 @@ export const calculationSlice = createSlice({
         addOperator(state, action) {
             if (action.payload === "=") return;
             if (!state.firstNumber) return {...state, firstNumber: 0, operator: action.payload};
-            return {...state, secondNumber: null, result:null, operator: action.payload};
+            return {...state, secondNumber: null, result: null, operator: action.payload};
         },
         calculateResult(state, action) {
             const inputValue = Number(action.payload);
@@ -67,7 +68,13 @@ export const calculationSlice = createSlice({
             return state = initialState
         }
     },
+    extraReducers: (builder) => {
+        builder.addCase(addNumber, (state, action) => {
+            if (state.result) return initialState
 
+        })
+
+    }
 });
 
 export const {inputValueAssignment, addOperator, calculateResult, resetOperation} =
