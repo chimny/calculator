@@ -54,3 +54,18 @@ test('it should update secondNumber without a dot', () => {
 })
 
 
+test('it should update firstNumber from result data', () => {
+
+    const previousState = {
+        firstNumber: 13,
+        operator: '*',
+        secondNumber: 2,
+        result: 26,
+    };
+
+    expect(reducer(previousState, inputValueAssignment)).toEqual(
+        {...previousState, firstNumber:26}
+    );
+
+})
+
