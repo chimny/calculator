@@ -2,6 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 import {addNumber} from "../actions/addNumber";
 
 
+
 const initialState = {
     firstNumber: null,
     operator: null,
@@ -41,24 +42,23 @@ export const calculationSlice = createSlice({
         calculateResult(state, action) {
             const inputValue = Number(action.payload);
             const {firstNumber, operator, result, secondNumber} = state;
-            const firstNumberEnc = Number(firstNumber);
-            let secondNumberEnc = inputValue;
+            let secondValue = inputValue;
             if (result || result === 0) {
                 state.firstNumber = state.result;
-                secondNumberEnc = Number(secondNumber);
+                secondValue = Number(secondNumber);
             }
             switch (operator) {
                 case "+":
-                    state.result = firstNumberEnc + secondNumberEnc;
+                    state.result = firstNumber + secondValue;
                     break;
                 case "-":
-                    state.result = firstNumberEnc - secondNumberEnc;
+                    state.result = firstNumber - secondValue;
                     break;
                 case "*":
-                    state.result = firstNumberEnc * secondNumberEnc;
+                    state.result = firstNumber * secondValue;
                     break;
                 case "/":
-                    state.result = firstNumberEnc / secondNumberEnc;
+                    state.result = firstNumber / secondValue;
                     break;
                 default:
                     return state;
@@ -67,15 +67,14 @@ export const calculationSlice = createSlice({
         resetOperation(state) {
             return state = initialState
         }
+
     },
     extraReducers: (builder) => {
-        builder.addCase(addNumber, (state, action) => {
+        builder.addCase(addNumber, (state) => {
             if (state.result) return initialState
 
-        })
-
-    }
-});
+    })
+}});
 
 export const {inputValueAssignment, addOperator, calculateResult, resetOperation} =
     calculationSlice.actions;

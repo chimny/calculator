@@ -10,7 +10,7 @@ export const inputSlice = createSlice({
     name: 'calcInput',
     initialState,
     reducers: {
-        addDot: (state, action) => {
+        addDot: (state) => {
             const prevState = state.value
 
             if (prevState === '') {
@@ -31,9 +31,10 @@ export const inputSlice = createSlice({
             state.value = '';
         }
     },
-    extraReducers: (builder) => {
-        builder.addCase(inputValueAssignment, (state, action) => {
-            return {...state, value: ''}
+
+    extraReducers: builder => {
+        builder.addCase(inputValueAssignment, (state) => {
+            state.value = ''
         })
             .addCase(addNumber, (state, action) => {
 
@@ -48,7 +49,8 @@ export const inputSlice = createSlice({
                 }
 
             })
-    }});
+    }
+});
 
 
 export const {addDot, removeNumber, clearValue} = inputSlice.actions;

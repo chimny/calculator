@@ -1,6 +1,8 @@
-import {addDot} from "../redux/slices/inputSlice";
+
+import {addNumber,addDot} from "../redux/slices/inputSlice";
 import {addOperator, inputValueAssignment, calculateResult} from "../redux/slices/calculationSlice";
-import {addNumber} from '../redux/actions/addNumber';
+
+
 
 export function updateInput(currentInput, symbol, operator, dispatch, result) {
 
