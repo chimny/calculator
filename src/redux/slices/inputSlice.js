@@ -47,13 +47,14 @@ export const inputSlice = createSlice({
                     state.value += addedNumber
 
                 }
+                return state
 
             })
     }
 });
 
 
-export const {addDot, removeNumber, clearValue} = inputSlice.actions;
+export const {addDot,  removeNumber, clearValue} = inputSlice.actions;
 
 export default inputSlice.reducer;
 

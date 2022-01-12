@@ -1,4 +1,5 @@
-import reducer, {addNumber} from '../../redux/slices/inputSlice';
+import  {addNumber} from '../../redux/actions/addNumber';
+import reducer from '../../redux/slices/inputSlice';
 
 test('input should not be updated', () => {
     const previousState = {
