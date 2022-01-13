@@ -6,12 +6,7 @@ const localData = {...JSON.parse(localStorage.getItem('theme'))};
 
 
 
-//@todo theme initial construction with empty local storage
 const initialState = localData.themeName ? localData : {...firstTheme};
-
-
-
-
 
 
 export const themeSlice = createSlice({

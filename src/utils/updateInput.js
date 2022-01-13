@@ -1,4 +1,3 @@
-
 import {addDot, removeNumber} from "../redux/slices/inputSlice";
 import {addOperator, inputValueAssignment, calculateResult} from "../redux/slices/calculationSlice";
 import {addNumber} from '../redux/actions/addNumber';
@@ -6,14 +5,12 @@ import {addNumber} from '../redux/actions/addNumber';
 
 export function updateInput(currentInput, symbol, operator, dispatch, result) {
 
-    
+
     let localSymbol = symbol;
     if (symbol === 'Enter') {
         localSymbol = "="
-    }
-
-else if(symbol === 'Backspace'){
-    return dispatch(removeNumber())
+    } else if (symbol === 'Backspace') {
+        return dispatch(removeNumber())
     }
 
     if (localSymbol === '.') {
