@@ -1,6 +1,6 @@
 import reducer, {calculateResult} from "../../redux/slices/calculationSlice";
 
-test('operator change should clear secondNumber and result', () => {
+test('it should give result 13', () => {
 
     const previousState = {
         firstNumber: 13,

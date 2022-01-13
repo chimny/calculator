@@ -48,10 +48,11 @@ export const calculationSlice = createSlice({
         },
         calculateResult(state, action) {
             const {firstNumber, operator, result, secondNumber} = state;
-            let secondValue = Number(action.payload);
+            const secondValue = action.payload ? state.secondNumber = Number(action.payload) : secondNumber;
+            // let secondValue = Number(action.payload);
             if (result || result === 0) {
                 state.firstNumber = state.result;
-                secondValue = Number(secondNumber);
+                // secondValue = Number(secondNumber);
             }
             switch (operator) {
                 case "+":
