@@ -49,3 +49,23 @@ test('equal sign shouldn\'t trigger operator change', () => {
         }
     );
 })
+
+test('non operator symbol shouldn\'t trigger operator change', () => {
+
+    const previousState = {
+        firstNumber: 13,
+        operator: '*',
+        secondNumber: 2,
+        result: 26,
+    };
+
+
+    expect(reducer(previousState, addOperator('y'))).toEqual(
+        {
+            ...previousState
+        }
+    );
+})
+
+
+

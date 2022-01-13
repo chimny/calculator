@@ -2,6 +2,11 @@ import {createSlice} from "@reduxjs/toolkit";
 import {addNumber} from "../actions/addNumber";
 
 
+//@todo jeżeli jest operator inny od wpisanego i jest input uzupełniony powinna się odbyć kalkulacja przed dodaniem nowego znaku
+
+const {OPERATION_SYMBOLS} = require('../../data/symbols');
+
+const eligibleSymbols = OPERATION_SYMBOLS.map(el => el.mathAction)
 
 const initialState = {
     firstNumber: null,
@@ -35,14 +40,15 @@ export const calculationSlice = createSlice({
             },
         },
         addOperator(state, action) {
-            if (action.payload === "=") return;
-            if (!state.firstNumber) return {...state, firstNumber: 0, operator: action.payload};
-            return {...state, secondNumber: null, result: null, operator: action.payload};
+            if (eligibleSymbols.includes(action.payload)) {
+                if (action.payload === "=") return;
+                if (!state.firstNumber) return {...state, firstNumber: 0, operator: action.payload};
+                return {...state, secondNumber: null, result: null, operator: action.payload};
+            }
         },
         calculateResult(state, action) {
-            const inputValue = Number(action.payload);
             const {firstNumber, operator, result, secondNumber} = state;
-            let secondValue = inputValue;
+            let secondValue = Number(action.payload);
             if (result || result === 0) {
                 state.firstNumber = state.result;
                 secondValue = Number(secondNumber);
@@ -71,11 +77,19 @@ export const calculationSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(addNumber, (state) => {
-            if (state.result) return initialState
+            const {result} = state;
 
-    })
-}});
+            if (result) return initialState
 
-export const {inputValueAssignment, addOperator, calculateResult, resetOperation} =
+
+        });
+
+
+    },
+
+
+})
+
+export const {inputValueAssignment,addOperator, calculateResult, resetOperation} =
     calculationSlice.actions;
 export default calculationSlice.reducer;

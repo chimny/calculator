@@ -1,5 +1,5 @@
 import {addDot, removeNumber} from "../redux/slices/inputSlice";
-import {addOperator, inputValueAssignment, calculateResult} from "../redux/slices/calculationSlice";
+import { inputValueAssignment, addOperator, calculateResult} from "../redux/slices/calculationSlice";
 import {addNumber} from '../redux/actions/addNumber';
 
 
@@ -13,10 +13,11 @@ export function updateInput(currentInput, symbol, operator, dispatch, result) {
         return dispatch(removeNumber())
     }
 
+
     if (localSymbol === '.') {
         dispatch(addDot());
     } else if (localSymbol === '-' && currentInput.length === 0 && result === '') {
-        dispatch(addNumber(symbol))
+        dispatch(addNumber(localSymbol))
     } else {
         dispatch(inputValueAssignment(currentInput));
         dispatch(addOperator(localSymbol));
