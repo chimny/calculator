@@ -1,6 +1,6 @@
 import {addDot, removeNumber} from "../redux/slices/inputSlice";
-import { inputValueAssignment, addOperator, calculateResult} from "../redux/slices/calculationSlice";
-import {addNumber} from '../redux/actions/addNumber';
+import {inputValueAssignment, addOperator, calculateResult} from "../redux/slices/calculationSlice";
+
 
 
 export function updateInput(currentInput, symbol, operator, dispatch, result) {
@@ -16,18 +16,29 @@ export function updateInput(currentInput, symbol, operator, dispatch, result) {
 
     if (localSymbol === '.') {
         dispatch(addDot());
-    } else if (localSymbol === '-' && currentInput.length === 0 && result === '') {
-        dispatch(addNumber(localSymbol))
-    } else {
-        dispatch(inputValueAssignment(currentInput));
-        dispatch(addOperator(localSymbol));
+    }
+        // else if (localSymbol === '-' && currentInput.length === 0 && result === '') {
+        //     dispatch(addNumber(localSymbol))
+    // }
+    else {
+        //
+        // if (operator !== localSymbol) {
+        //
+        //     dispatch(inputValueAssignment(currentInput));
+        //     dispatch(calculateResult(currentInput));
+        //     dispatch(addOperator(localSymbol));
+        // }
+        // else {
+            dispatch(inputValueAssignment(currentInput));
+            dispatch(addOperator(localSymbol));
 
-        if (localSymbol === '=') {
-            if (operator) {
-                dispatch(calculateResult(currentInput))
+            if (localSymbol === '=') {
+                if (operator) {
+                    dispatch(calculateResult(currentInput))
+                }
             }
         }
-    }
+    // }
 
 
 }

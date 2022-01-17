@@ -22,17 +22,19 @@ export const calculationSlice = createSlice({
     reducers: {
         inputValueAssignment: {
             reducer: (state, action) => {
-                const {firstNumber, result} = state;
+                const {firstNumber, operator, result} = state;
 
                 if (action.payload) {
-                    return firstNumber === null ? {...state, firstNumber: action.payload} : {
-                        ...state,
-                        secondNumber: action.payload
+                    if (operator) {
+                        return {...state, secondNumber: action.payload}
+                    } else {
+                        return {...state, firstNumber: action.payload}
                     }
-                } else {
-                    if (result) {
-                        state.firstNumber = state.result;
-                    }
+
+                } else if (result) {
+
+                    state.firstNumber = state.result;
+
                 }
             },
             prepare: (inputValue) => {
@@ -44,28 +46,29 @@ export const calculationSlice = createSlice({
                 if (action.payload === "=") return;
                 if (!state.firstNumber) return {...state, firstNumber: 0, operator: action.payload};
                 return {...state, secondNumber: null, result: null, operator: action.payload};
+                // return {...state, secondNumber:null, operator: action.payload};
             }
         },
         calculateResult(state, action) {
-            const {firstNumber, operator, result, secondNumber} = state;
-            const secondValue = action.payload ? state.secondNumber = Number(action.payload) : secondNumber;
-            // let secondValue = Number(action.payload);
+            const {operator, result} = state;
+            if (action.payload) {
+                state.secondNumber = Number(action.payload);
+            }
             if (result || result === 0) {
-                state.firstNumber = state.result;
-                // secondValue = Number(secondNumber);
+                state.firstNumber = result;
             }
             switch (operator) {
                 case "+":
-                    state.result = firstNumber + secondValue;
+                    state.result = state.firstNumber + state.secondNumber;
                     break;
                 case "-":
-                    state.result = firstNumber - secondValue;
+                    state.result = state.firstNumber - state.secondNumber;
                     break;
                 case "*":
-                    state.result = firstNumber * secondValue;
+                    state.result = state.firstNumber * state.secondNumber;
                     break;
                 case "/":
-                    state.result = firstNumber / secondValue;
+                    state.result = state.firstNumber / state.secondNumber;
                     break;
                 default:
                     return state;
@@ -91,6 +94,6 @@ export const calculationSlice = createSlice({
 
 })
 
-export const {inputValueAssignment,addOperator, calculateResult, resetOperation} =
+export const {inputValueAssignment, addOperator, calculateResult, resetOperation} =
     calculationSlice.actions;
 export default calculationSlice.reducer;

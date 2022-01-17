@@ -40,7 +40,15 @@ test('it should update values - previous result as first number, secondnumber as
         {  firstNumber: 15,
             operator: '+',
             secondNumber: 2,
-            result: 20,}
+            result: 17,}
+    );
+
+
+    expect(reducer(previousState, calculateResult('7'))).toEqual(
+        {  firstNumber: 15,
+            operator: '+',
+            secondNumber: 7,
+            result: 22,}
     );
 
 
