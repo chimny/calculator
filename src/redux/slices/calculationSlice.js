@@ -18,36 +18,37 @@ export const calculationSlice = createSlice({
     name: "calculationSlice",
     initialState,
     reducers: {
-        inputValueAssignment: {
-            reducer: (state, action) => {
-                const {firstNumber, operator, result} = state;
-
-                if (action.payload) {
-                    if (operator) {
-                        return {...state, secondNumber: action.payload}
-                    } else {
-                        return {...state, firstNumber: action.payload}
-                    }
-
-                } else if (result) {
-
-                    state.firstNumber = state.result;
-
-                }
-            },
-            prepare: (inputValue) => {
-                return {payload: inputValue[inputValue.length - 1] === '.' ? Number(inputValue.slice(0, -1)) : Number(inputValue)};
-            },
-        },
+        // inputValueAssignment: {
+        //     reducer: (state, action) => {
+        //         const {firstNumber, operator, result} = state;
+        //
+        //         if (action.payload) {
+        //             if (operator) {
+        //                 return {...state, secondNumber: action.payload}
+        //             } else {
+        //                 return {...state, firstNumber: action.payload}
+        //             }
+        //
+        //         } else if (result) {
+        //
+        //             state.firstNumber = state.result;
+        //
+        //         }
+        //     },
+        //     prepare: (inputValue) => {
+        //         return {payload: inputValue[inputValue.length - 1] === '.' ? Number(inputValue.slice(0, -1)) : Number(inputValue)};
+        //     },
+        // },
         addOperator(state, action) {
-            if (eligibleSymbols.includes(action.payload)) {
-                if (action.payload === "=") return;
-                if (!state.firstNumber) return {...state, firstNumber: 0, operator: action.payload};
-                // if (state.input && state.firstNumber) return {...state,operator: action.payload,secondNumber:state.input,input:''}
-                // return {...state, secondNumber: null, result: null, operator: action.payload};
-                if(state.input) return {...state,secondNumber:state.input, input:''}
-                return {...state, secondNumber:null, operator: action.payload, input:''};
-            }
+if(eligibleSymbols.includes(action.payload)){
+    if (action.payload === "=") return;
+    if(state.result) return {...state, firstNumber:state.result, result:null, secondNumber:null, operator:action.payload, input:''}
+    if (!state.firstNumber) return {...state, firstNumber: Number(state.input), operator: action.payload, input:''};
+    if(state.input) return {...state,secondNumber:state.input, operator:action.payload,input:''}
+    return {...state, secondNumber:null, operator: action.payload, input:''};
+}
+
+
         },
         calculateResult(state, action) {
             const {operator, result} = state;
@@ -105,6 +106,11 @@ export const calculationSlice = createSlice({
         addNumber: (state, action) => {
 
             const addedNumber = String(action.payload);
+
+            if(state.result){
+                return {...initialState, input:addedNumber}
+            }
+
             if (state.input === '0' && Number(addedNumber)) {
                 state.input = addedNumber
             } else if (Number(addedNumber)) {
@@ -117,18 +123,6 @@ export const calculationSlice = createSlice({
         }
 
     },
-    // extraReducers: (builder) => {
-    //     builder.addCase(addNumber, (state) => {
-    //         const {result} = state;
-    //
-    //         if (result) return initialState
-    //
-    //
-    //     });
-    //
-    //
-    // },
-
 
 })
 
