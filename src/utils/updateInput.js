@@ -1,5 +1,5 @@
-import {addDot, removeNumber} from "../redux/slices/inputSlice";
-import {inputValueAssignment, addOperator, calculateResult} from "../redux/slices/calculationSlice";
+// import {addDot, removeNumber} from "../redux/slices/inputSlice";
+import {inputValueAssignment, addOperator, calculateResult,addDot,removeNumber} from "../redux/slices/calculationSlice";
 
 
 

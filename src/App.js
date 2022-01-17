@@ -3,17 +3,16 @@ import {Wrapper} from "./styles/Wrapper";
 import {GlobalStyle} from "./styles/GlobalStyle";
 import {useEffect} from "react";
 import {NUMBERS, OPERATION_SYMBOLS} from "./data/symbols";
-import {addNumber} from "./redux/actions/addNumber";
+import {addNumber} from "./redux/slices/calculationSlice";
 import {useDispatch, useSelector} from "react-redux";
-
 import {ThemeProvider} from "styled-components";
 import {updateInput} from "./utils/updateInput";
 
 function App() {
 
     const dispatch = useDispatch();
-    const inputValue = useSelector((state => state.inputValue.value));
-    const {operator, result} = useSelector((state => state.operationSequence));
+    // const inputValue = useSelector((state => state.inputValue.value));
+    const {operator, result, input} = useSelector((state => state.calculator));
     const theme = useSelector((state => state.theme));
 
     const handleKeyDown = (e) => {
@@ -24,7 +23,7 @@ function App() {
 
             dispatch(addNumber(e.key))
         } else if (operationSymbols.includes(e.key) || e.key === "Enter" || 'Backspace') {
-            updateInput(inputValue, e.key, operator, dispatch, result)
+            updateInput(input, e.key, operator, dispatch, result)
         }
     };
 

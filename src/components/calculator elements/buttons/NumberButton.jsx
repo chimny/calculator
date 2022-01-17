@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {addNumber} from '../../../redux/actions/addNumber'
+import {addNumber} from '../../../redux/slices/calculationSlice'
 import {StyledNumButton} from "../../../styles/StyledNumButton";
 
 export const NumberButton = (props) => {

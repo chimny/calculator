@@ -3,8 +3,7 @@ import {StyledCalcWindow} from "../../styles/StyledCalcWindow";
 
 export const CalcWindow = () => {
 
-    const inputValue = useSelector((state => state.inputValue.value));
-    const {firstNumber, operator, secondNumber, result} = useSelector((state => state.operationSequence));
+    const {firstNumber, operator, secondNumber, result,input} = useSelector((state => state.calculator));
 
     let activeInputView;
     let equalSignVisible;
@@ -15,7 +14,7 @@ export const CalcWindow = () => {
         activeInputView = <span>{result}</span>;
     } else {
         equalSignVisible = null;
-        activeInputView = <span>{inputValue}</span>;
+        activeInputView = <span>{input}</span>;
     }
 
 
