@@ -20,31 +20,18 @@ export const calculationSlice = createSlice({
     reducers: {
         addOperator(state, action) {
             if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
-                //@todo jesteś już blisko, dzisiaj to rozwiążesz potem pisanie testów
-                // state.secondNumber = null;
-                if (state.result && state.operator !== action.payload) {
-                    if(!state.secondNumber){
-                        const calculation = state.input ? calculateValue(state.result, state.operator, Number(state.input)) : state.firstNumber;
-                        return {...initialState, firstNumber: calculation, operator: action.payload}
-                    }
-
+                const {firstNumber, secondNumber, result, operator, input} = state;
+                if (result) {
+                    return {...initialState, firstNumber: state.result, operator: action.payload}
                 }
-                if (state.result) return {
-                    ...initialState,
-                    firstNumber: state.result,
-                    operator: action.payload,
+                if (!firstNumber) {
+                    return {...initialState, firstNumber: Number(state.input), operator: action.payload}
+                } else if (secondNumber === null && action.payload !== operator) {
+                    const calculation = calculateValue(firstNumber, operator, input);
+                    return {...initialState, firstNumber: calculation, operator: action.payload}
+                } else if (firstNumber || firstNumber === 0) {
+                    return {...initialState, secondNumber: Number(state.input), operator: action.payload}
                 }
-                if (!state.firstNumber) return {
-                    ...initialState,
-                    firstNumber: Number(state.input),
-                    operator: action.payload
-                };
-                if (state.input) return {
-                    ...initialState,
-                    secondNumber: state.input,
-                    operator: action.payload
-                }
-                return {...initialState, operator: action.payload};
             }
 
 
