@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {calculateValue} from "../../utils/calculateValue";
 
-
+//filtering symbols eligible for math operation
 const {OPERATION_SYMBOLS} = require('../../data/symbols');
-
 const eligibleSymbols = OPERATION_SYMBOLS.map(el => el.mathAction)
 
 const initialState = {
@@ -18,46 +18,33 @@ export const calculationSlice = createSlice({
     name: "calculationSlice",
     initialState,
     reducers: {
-        // inputValueAssignment: {
-        //     reducer: (state, action) => {
-        //         const {firstNumber, operator, result} = state;
-        //
-        //         if (action.payload) {
-        //             if (operator) {
-        //                 return {...state, secondNumber: action.payload}
-        //             } else {
-        //                 return {...state, firstNumber: action.payload}
-        //             }
-        //
-        //         } else if (result) {
-        //
-        //             state.firstNumber = state.result;
-        //
-        //         }
-        //     },
-        //     prepare: (inputValue) => {
-        //         return {payload: inputValue[inputValue.length - 1] === '.' ? Number(inputValue.slice(0, -1)) : Number(inputValue)};
-        //     },
-        // },
         addOperator(state, action) {
-            if (eligibleSymbols.includes(action.payload)) {
-                if (action.payload === "=") return;
+            if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
+                //@todo jesteś już blisko, dzisiaj to rozwiążesz potem pisanie testów
+                // state.secondNumber = null;
+                if (state.result && state.operator !== action.payload) {
+                    if(!state.secondNumber){
+                        const calculation = state.input ? calculateValue(state.result, state.operator, Number(state.input)) : state.firstNumber;
+                        return {...initialState, firstNumber: calculation, operator: action.payload}
+                    }
+
+                }
                 if (state.result) return {
-                    ...state,
+                    ...initialState,
                     firstNumber: state.result,
-                    result: null,
-                    secondNumber: null,
                     operator: action.payload,
-                    input: ''
                 }
                 if (!state.firstNumber) return {
-                    ...state,
+                    ...initialState,
                     firstNumber: Number(state.input),
-                    operator: action.payload,
-                    input: ''
+                    operator: action.payload
                 };
-                if (state.input) return {...state, secondNumber: state.input, operator: action.payload, input: ''}
-                return {...state, secondNumber: null, operator: action.payload, input: ''};
+                if (state.input) return {
+                    ...initialState,
+                    secondNumber: state.input,
+                    operator: action.payload
+                }
+                return {...initialState, operator: action.payload};
             }
 
 
@@ -73,25 +60,26 @@ export const calculationSlice = createSlice({
             if (result || result === 0) {
                 state.firstNumber = result;
             }
-            switch (operator) {
-                case "+":
-                    state.result = state.firstNumber + state.secondNumber;
-                    break;
-                case "-":
-                    state.result = state.firstNumber - state.secondNumber;
-                    break;
-                case "*":
-                    state.result = state.firstNumber * state.secondNumber;
-                    break;
-                case "/":
-                    state.result = state.firstNumber / state.secondNumber;
-                    break;
-                default:
-                    return state;
-            }
+            // switch (operator) {
+            //     case "+":
+            //         state.result = state.firstNumber + state.secondNumber;
+            //         break;
+            //     case "-":
+            //         state.result = state.firstNumber - state.secondNumber;
+            //         break;
+            //     case "*":
+            //         state.result = state.firstNumber * state.secondNumber;
+            //         break;
+            //     case "/":
+            //         state.result = state.firstNumber / state.secondNumber;
+            //         break;
+            //     default:
+            //         return state;
+            // }
+            state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
         },
-        resetOperation(state) {
-            return state = initialState
+        resetOperation() {
+            return {...initialState}
         },
 
         addDot: (state) => {

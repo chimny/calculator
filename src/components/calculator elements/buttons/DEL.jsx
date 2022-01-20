@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {removeNumber} from '../../../redux/slices/inputSlice'
+import {removeNumber} from '../../../redux/slices/calculationSlice'
 import {StyledClearButton} from "../../../styles/StyledClearButton";
 
 export const DEL = () => {
