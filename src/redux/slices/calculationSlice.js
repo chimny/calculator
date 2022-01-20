@@ -40,13 +40,25 @@ export const calculationSlice = createSlice({
         //     },
         // },
         addOperator(state, action) {
-if(eligibleSymbols.includes(action.payload)){
-    if (action.payload === "=") return;
-    if(state.result) return {...state, firstNumber:state.result, result:null, secondNumber:null, operator:action.payload, input:''}
-    if (!state.firstNumber) return {...state, firstNumber: Number(state.input), operator: action.payload, input:''};
-    if(state.input) return {...state,secondNumber:state.input, operator:action.payload,input:''}
-    return {...state, secondNumber:null, operator: action.payload, input:''};
-}
+            if (eligibleSymbols.includes(action.payload)) {
+                if (action.payload === "=") return;
+                if (state.result) return {
+                    ...state,
+                    firstNumber: state.result,
+                    result: null,
+                    secondNumber: null,
+                    operator: action.payload,
+                    input: ''
+                }
+                if (!state.firstNumber) return {
+                    ...state,
+                    firstNumber: Number(state.input),
+                    operator: action.payload,
+                    input: ''
+                };
+                if (state.input) return {...state, secondNumber: state.input, operator: action.payload, input: ''}
+                return {...state, secondNumber: null, operator: action.payload, input: ''};
+            }
 
 
         },
@@ -88,7 +100,7 @@ if(eligibleSymbols.includes(action.payload)){
             if (prevState === '') {
                 state.input = '0.'
             } else if (prevState.includes('.')) {
-                return prevState
+                return
             } else {
                 state.input = prevState + '.'
             }
@@ -107,8 +119,8 @@ if(eligibleSymbols.includes(action.payload)){
 
             const addedNumber = String(action.payload);
 
-            if(state.result){
-                return {...initialState, input:addedNumber}
+            if (state.result) {
+                return {...initialState, input: addedNumber}
             }
 
             if (state.input === '0' && Number(addedNumber)) {
