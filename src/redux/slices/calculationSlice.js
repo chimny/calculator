@@ -47,22 +47,7 @@ export const calculationSlice = createSlice({
             if (result || result === 0) {
                 state.firstNumber = result;
             }
-            // switch (operator) {
-            //     case "+":
-            //         state.result = state.firstNumber + state.secondNumber;
-            //         break;
-            //     case "-":
-            //         state.result = state.firstNumber - state.secondNumber;
-            //         break;
-            //     case "*":
-            //         state.result = state.firstNumber * state.secondNumber;
-            //         break;
-            //     case "/":
-            //         state.result = state.firstNumber / state.secondNumber;
-            //         break;
-            //     default:
-            //         return state;
-            // }
+
             state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
         },
         resetOperation() {
@@ -86,9 +71,7 @@ export const calculationSlice = createSlice({
             state.input = prevState.slice(0, prevState.length - 1)
 
         },
-        // clearValue: (state) => {
-        //     state.input = '';
-        // },
+
 
         addNumber: (state, action) => {
 
@@ -120,7 +103,6 @@ export const {
     resetOperation,
     addDot,
     removeNumber,
-    clearValue,
     addNumber,
 } =
     calculationSlice.actions;

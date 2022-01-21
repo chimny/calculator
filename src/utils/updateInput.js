@@ -1,7 +1,7 @@
 import {addOperator, calculateResult, addDot, removeNumber} from "../redux/slices/calculationSlice";
 
 
-export function updateInput(currentInput, symbol, operator, dispatch, result) {
+export function updateInput(currentInput, symbol, operator, dispatch) {
 
 
     let localSymbol = symbol;

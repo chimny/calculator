@@ -7,6 +7,7 @@ export function calculateValue(firstValue, symbol, secondValue) {
         case "*":
             return firstValue * secondValue;
         case "/":
+            if (secondValue === 0) return 'dont divide by 0!'
             return firstValue / secondValue;
         default:
             return;

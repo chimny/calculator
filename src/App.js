@@ -23,7 +23,7 @@ function App() {
 
             dispatch(addNumber(e.key))
         } else if (operationSymbols.includes(e.key) || e.key === "Enter" || 'Backspace') {
-            updateInput(input, e.key, operator, dispatch, result)
+            updateInput(input, e.key, operator, dispatch)
         }
     };
 
