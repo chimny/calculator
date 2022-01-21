@@ -1,6 +1,6 @@
 import reducer, {addOperator} from "../../redux/slices/calculationSlice";
 
-test('operator change should clear secondNumber and result (user didnt typed any input)', () => {
+test('addOperator reducer should update firstNumber with result value, and operator from action payload. All other values should be cleared', () => {
 
     const previousState = {
         firstNumber: 13,
@@ -11,7 +11,7 @@ test('operator change should clear secondNumber and result (user didnt typed any
     };
 
     const expectedStateBeforeOperatorPayload = {
-        firstNumber: 13,
+        firstNumber: 26,
         operator: null,
         secondNumber: null,
         result: null,
@@ -71,7 +71,7 @@ test('non operator symbol shouldn\'t trigger operator change', () => {
     );
 })
 
-test('if user typed input and triggered new operator, firstNumber should be calculated based on previous values',()=>{
+test('if user typed input and triggered new operator, firstNumber should be calculated based on input and firstNumber values',()=>{
     const previousState = {
         firstNumber: 18,
         operator: '*',

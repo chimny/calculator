@@ -1,20 +1,38 @@
 import reducer, {removeNumber} from '../../redux/slices/calculationSlice';
 
+
+
+
+
+
 test('last number should be deleted', () => {
+
     const previousState = {
-        value: '48999',
+        firstNumber: null,
+        operator: null,
+        secondNumber: null,
+        result: null,
+        input: '48999',
     };
+
+
+
     expect(reducer(previousState, removeNumber())).toEqual(
-        {
-            value: '4899',
-        }
+        {...previousState,input:'4899'}
     );
 })
 
 test('input should stay as it is', () => {
+
     const previousState = {
-        value: '',
+        firstNumber: null,
+        operator: null,
+        secondNumber: null,
+        result: null,
+        input: '',
     };
+
+
     expect(reducer(previousState, removeNumber())).toEqual(
         previousState
     );

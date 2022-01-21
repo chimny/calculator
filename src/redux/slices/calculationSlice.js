@@ -12,7 +12,7 @@ const initialState = {
     result: null,
     input: '',
 };
-//@todo write tests
+
 
 export const calculationSlice = createSlice({
     name: "calculationSlice",
@@ -86,9 +86,9 @@ export const calculationSlice = createSlice({
             state.input = prevState.slice(0, prevState.length - 1)
 
         },
-        clearValue: (state) => {
-            state.input = '';
-        },
+        // clearValue: (state) => {
+        //     state.input = '';
+        // },
 
         addNumber: (state, action) => {
 
