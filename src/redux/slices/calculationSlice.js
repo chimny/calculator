@@ -12,7 +12,7 @@ const initialState = {
     result: null,
     input: '',
 };
-
+//@todo write tests
 
 export const calculationSlice = createSlice({
     name: "calculationSlice",
