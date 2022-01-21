@@ -1,4 +1,4 @@
-import reducer, {removeNumber} from '../../redux/slices/inputSlice';
+import reducer, {removeNumber} from '../../redux/slices/calculationSlice';
 
 test('last number should be deleted', () => {
     const previousState = {

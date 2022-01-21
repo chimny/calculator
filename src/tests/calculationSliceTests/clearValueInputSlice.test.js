@@ -1,4 +1,4 @@
-import reducer, {clearValue} from '../../redux/slices/inputSlice';
+import reducer, {clearValue} from '../../redux/slices/calculationSlice';
 
 test('value should stay empty', () => {
     const previousState = {
