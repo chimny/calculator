@@ -12,7 +12,7 @@ function App() {
 
     const dispatch = useDispatch();
     // const inputValue = useSelector((state => state.inputValue.value));
-    const {operator, result, input} = useSelector((state => state.calculator));
+    const {operator,  input} = useSelector((state => state.calculator));
     const theme = useSelector((state => state.theme));
 
     const handleKeyDown = (e) => {
@@ -23,7 +23,7 @@ function App() {
 
             dispatch(addNumber(e.key))
         } else if (operationSymbols.includes(e.key) || e.key === "Enter" || 'Backspace') {
-            updateInput(input, e.key, operator, dispatch)
+            updateInput(input, e.key, operator)
         }
     };
 
