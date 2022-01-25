@@ -13,7 +13,7 @@ export const StyledCalculator = styled.div`
   
   }
   
-  padding: 0;
+  padding: 2rem 0 0 0 ;
   width: 90%;
   max-width: 450px;
 
