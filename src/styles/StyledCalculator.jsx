@@ -1,23 +1,21 @@
 import styled from "styled-components";
 
 
-
-
 export const StyledCalculator = styled.div`
 
   margin: 0 auto;
   height: 100vh;
-  
-  @media(max-width: 768px) {
+
+  @media (max-width: 768px) {
     padding: 1rem;
-  
+    width: 100%;
   }
-  
-  padding: 2rem 0 0 0 ;
+
+  padding: 2rem 0 0 0;
   width: 90%;
   max-width: 450px;
 
  
-  background: ${({theme} )=> theme.mainBackground};
-  }
+  background: ${({theme}) => theme.mainBackground};
+}
 `

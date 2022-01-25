@@ -17,6 +17,7 @@ export const StyledSwitchToggle = styled.div`/* The container */
 
   h2 {
     grid-area: themeSign;
+    padding-right: 3px;
   }
 
   span {
