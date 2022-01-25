@@ -1,11 +1,10 @@
-# Frontend Mentor - Sunnyside agency landing page solution
+# Frontend Mentor - Calculator app solution
 
-This website was inspired by Frontend Mentor challenge [Sunnyside agency landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/sunnyside-agency-landing-page-7yVs3B6ef).
-However, testimonial section had been modified to a carousel in order to compress this section and I've added contact section.
+This website was inspired by Frontend Mentor challenge [Calculator App](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29).
 
 # Live preview
 
--   Live Site URL: [URL](https://chimny.github.io/Sunnyside/)
+-   Live Site  [URL](https://chimny.github.io/calculator/)
 
 ## Overview
 
@@ -13,11 +12,9 @@ However, testimonial section had been modified to a carousel in order to compres
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- See different menu regarding screen size
-- Be able to navigate to chosen section with nav above and footer below
-- Read testimonials, which change over time it's also possible to navigate them with arrows.
+- Choose one of the three possible themes (setting should be saved by LocalStorage) 
+- Calculate two numbers based on math symbol
+- Type symbols/numbers directly from keyboard or by provided buttons
 
 
 ### Local setup
@@ -28,19 +25,22 @@ Users should be able to:
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- JavaScript
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- Sass
-- Parcel
+- create-react-app setup
+- styled components
+- redux toolkit
+- css grid
+
+
+### Testing
+
+App was tested by built-in create-react-app JEST. 
+To check and run tests locally type npm run test command. 
 
 ### Chosen screenshots
 
-
-![Header mobile ](./src/images/screenshots/mobile/header-mobile.PNG)
-![About section mobile ](./src/images/screenshots/mobile/about-mobile-section.PNG)
-![Header section desktop](./src/images/screenshots/desktop/header-desktop.PNG)
-![Testimonial desktop](./src/images/screenshots/desktop/testiminials-desktop-section.PNG)
+- ####desktop firstTheme
+![desktop firstTheme](./screenshots/destkop%20firstTheme.PNG)
+- ####mobile secondTheme
+![mobile secondTheme](./screenshots/mobile%20secondTheme.PNG)
+- ####desktop thirdTheme
+![desktop thirdTheme](./screenshots/destkop%20thirdTheme.PNG)
