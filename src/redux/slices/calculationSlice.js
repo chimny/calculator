@@ -21,13 +21,17 @@ export const calculationSlice = createSlice({
         addOperator(state, action) {
             if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
                 const {firstNumber, secondNumber, result, operator, input} = state;
+                // if(operator === action.payload) return;
                 if (result) {
                     return {...initialState, firstNumber: state.result, operator: action.payload}
                 }
                 if (!firstNumber) {
                     return {...initialState, firstNumber: Number(state.input), operator: action.payload}
-                } else if (secondNumber === null && action.payload !== operator) {
-                    const calculation = calculateValue(firstNumber, operator, input);
+                }
+                // else if (secondNumber === null && action.payload !== operator) {
+                else if (secondNumber === null ) {
+                    //@todo changing operator
+                    const calculation = calculateValue(firstNumber, operator, Number(input));
                     return {...initialState, firstNumber: calculation, operator: action.payload}
                 } else if (firstNumber || firstNumber === 0) {
                     return {...initialState, secondNumber: Number(state.input), operator: action.payload}
