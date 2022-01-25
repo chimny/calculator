@@ -38,9 +38,13 @@ To check and run tests locally type npm run test command.
 
 ### Chosen screenshots
 
-- ####desktop firstTheme
-![desktop firstTheme](./screenshots/destkop%20firstTheme.PNG)
-- ####mobile secondTheme
+- desktop firstTheme
+
+-![desktop firstTheme](./screenshots/destkop%20firstTheme.PNG)
+- mobile secondTheme
+
 ![mobile secondTheme](./screenshots/mobile%20secondTheme.PNG)
-- ####desktop thirdTheme
+- desktop thirdTheme
+ 
+
 ![desktop thirdTheme](./screenshots/destkop%20thirdTheme.PNG)
