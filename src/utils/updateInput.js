@@ -24,7 +24,7 @@ export function updateInput(currentInput, symbol, operator) {
         dispatch(addOperator(localSymbol));
 
         if (localSymbol === '=') {
-            if (operator) {
+            if (operator && currentInput) {
                 dispatch(calculateResult(currentInput))
             }
         }
