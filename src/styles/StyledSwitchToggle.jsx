@@ -46,29 +46,30 @@ export const StyledSwitchToggle = styled.div`/* The container */
     display: flex;
   }
 
-  
-  label.container{
+
+  label.container {
     position: relative;
     cursor: pointer;
-    input{
+
+    input {
       cursor: pointer;
       opacity: 0;
     }
-    
+
     .checkmark {
       position: absolute;
-      top:50%;
-      left:50%;
+      top: 50%;
+      left: 50%;
       height: 12px;
       width: 12px;
       border-radius: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
     }
 
     input:checked ~ .checkmark {
       background-color: ${({theme}) => theme.equalButtonBackground};
     }
-    
+
   }
 
 `

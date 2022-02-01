@@ -1,22 +1,20 @@
 import {calculateValue} from "../../utils/calculateValue";
 
 
-
-
 test('adding', () => {
 
 
-    expect(calculateValue(2,'+',2)).toEqual(
-         4
+    expect(calculateValue(2, '+', 2)).toEqual(
+        4
     )
 
 
-    expect(calculateValue(-2,'+',2)).toEqual(
-        0
+    expect(calculateValue(0.1, '+', 0.2)).toEqual(
+        0.3
     )
 
 
-    expect(calculateValue(0.5,'+',1)).toEqual(
+    expect(calculateValue(0.5, '+', 1)).toEqual(
         1.5
     )
 });
@@ -24,17 +22,17 @@ test('adding', () => {
 test('subtraction', () => {
 
 
-    expect(calculateValue(2,'-',2)).toEqual(
+    expect(calculateValue(2, '-', 2)).toEqual(
         0
     )
 
 
-    expect(calculateValue(-2,'-',2)).toEqual(
+    expect(calculateValue(-2, '-', 2)).toEqual(
         -4
     )
 
 
-    expect(calculateValue(0.5,'-',1)).toEqual(
+    expect(calculateValue(0.5, '-', 1)).toEqual(
         -0.5
     )
 });
@@ -42,22 +40,22 @@ test('subtraction', () => {
 test('multiply', () => {
 
 
-    expect(calculateValue(2,'*',2)).toEqual(
+    expect(calculateValue(2, '*', 2)).toEqual(
         4
     )
 
 
-    expect(calculateValue(-2,'*',2)).toEqual(
+    expect(calculateValue(-2, '*', 2)).toEqual(
         -4
     )
 
 
-    expect(calculateValue(0.5,'*',1)).toEqual(
+    expect(calculateValue(0.5, '*', 1)).toEqual(
         0.5
     )
 
 
-    expect(calculateValue(0.5,'*',0)).toEqual(
+    expect(calculateValue(0.5, '*', 0)).toEqual(
         0
     )
 });
@@ -66,22 +64,22 @@ test('multiply', () => {
 test('divide', () => {
 
 
-    expect(calculateValue(2,'/',2)).toEqual(
+    expect(calculateValue(2, '/', 2)).toEqual(
         1
     )
 
 
-    expect(calculateValue(-2,'/',2)).toEqual(
+    expect(calculateValue(-2, '/', 2)).toEqual(
         -1
     )
 
 
-    expect(calculateValue(0.5,'/',1)).toEqual(
+    expect(calculateValue(0.5, '/', 1)).toEqual(
         0.5
     )
 
 
-    expect(calculateValue(0.5,'/',0)).toEqual(
-     'don\'t divide by 0!'
+    expect(calculateValue(0.5, '/', 0)).toEqual(
+        'don\'t divide by 0!'
     )
 });

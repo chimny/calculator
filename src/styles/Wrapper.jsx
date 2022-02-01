@@ -5,6 +5,4 @@ export const Wrapper = styled.div`
   min-height: 580px;
   background: ${({theme}) => theme.mainBackground};
 
-
-
 `

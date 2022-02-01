@@ -1,10 +1,6 @@
 import reducer, {removeNumber} from '../../redux/slices/calculationSlice';
 
 
-
-
-
-
 test('last number should be deleted', () => {
 
     const previousState = {
@@ -16,9 +12,8 @@ test('last number should be deleted', () => {
     };
 
 
-
     expect(reducer(previousState, removeNumber())).toEqual(
-        {...previousState,input:'4899'}
+        {...previousState, input: '4899'}
     );
 })
 

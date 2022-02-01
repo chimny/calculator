@@ -10,15 +10,14 @@ test('it should give result 13', () => {
     };
 
 
-
-
     expect(reducer(previousState, calculateResult('2'))).toEqual(
-        {  firstNumber: 13,
+        {
+            firstNumber: 13,
             operator: '+',
             secondNumber: 2,
-            result: 15,}
+            result: 15,
+        }
     );
-
 
 
 });
@@ -34,23 +33,24 @@ test('it should update values - previous result as first number, secondnumber as
     };
 
 
-
-
     expect(reducer(previousState, calculateResult('2'))).toEqual(
-        {  firstNumber: 15,
+        {
+            firstNumber: 15,
             operator: '+',
             secondNumber: 2,
-            result: 17,}
+            result: 17,
+        }
     );
 
 
     expect(reducer(previousState, calculateResult('7'))).toEqual(
-        {  firstNumber: 15,
+        {
+            firstNumber: 15,
             operator: '+',
             secondNumber: 7,
-            result: 22,}
+            result: 22,
+        }
     );
-
 
 
 });

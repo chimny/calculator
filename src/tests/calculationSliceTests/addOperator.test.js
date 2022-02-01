@@ -71,7 +71,7 @@ test('non operator symbol shouldn\'t trigger operator change', () => {
     );
 })
 
-test('if user typed input and triggered new operator, firstNumber should be calculated based on input and firstNumber values',()=>{
+test('if user typed input and triggered new operator, firstNumber should be calculated based on input and firstNumber values', () => {
     const previousState = {
         firstNumber: 18,
         operator: '*',
@@ -90,9 +90,6 @@ test('if user typed input and triggered new operator, firstNumber should be calc
             input: '',
         }
     );
-
-
-
 
 
 })

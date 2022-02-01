@@ -50,7 +50,6 @@ test('zero should be replaced by new number', () => {
 })
 
 
-
 test('zero should be hit once if it\'s the only value ', () => {
     const previousState = {
         firstNumber: null,

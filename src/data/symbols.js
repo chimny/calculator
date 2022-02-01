@@ -10,7 +10,6 @@ const NUMBERS = [{num: '0', gridArea: 'zero'},
     {num: '9', gridArea: 'nine'},]
 
 
-
 const OPERATION_SYMBOLS = [
     {
         mathAction: '*',

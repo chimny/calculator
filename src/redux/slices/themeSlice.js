@@ -1,9 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
-const {firstTheme, secondTheme, thirdTheme} = require('../../data/theme') ;
+
+const {firstTheme, secondTheme, thirdTheme} = require('../../data/theme');
 
 
 const localData = {...JSON.parse(localStorage.getItem('theme'))};
-
 
 
 const initialState = localData.themeName ? localData : {...firstTheme};

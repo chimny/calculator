@@ -12,7 +12,7 @@ function App() {
 
     const dispatch = useDispatch();
     // const inputValue = useSelector((state => state.inputValue.value));
-    const {operator,  input} = useSelector((state => state.calculator));
+    const {operator, input} = useSelector((state => state.calculator));
     const theme = useSelector((state => state.theme));
 
     const handleKeyDown = (e) => {

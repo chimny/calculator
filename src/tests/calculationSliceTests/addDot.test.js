@@ -22,7 +22,6 @@ test('if the dot is triggered and the input is empty, the zero should append as 
 })
 
 
-
 test('it should stay with one dot', () => {
     const previousState = {
         firstNumber: null,
