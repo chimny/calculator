@@ -1,11 +1,9 @@
 import Big from 'big.js';
 
 
-
-
 export function calculateValue(firstValue, symbol, secondValue) {
 
-    const bigFirstValue =  Big(firstValue);
+    const bigFirstValue = Big(firstValue);
     const bigSecondValue = Big(secondValue);
 
     switch (symbol) {

@@ -6,8 +6,12 @@ export const CalculationButton = (props) => {
     const {symbol, area} = props;
     const {operator, input} = useSelector((state => state.calculator));
 
+    function updateHandler() {
+        updateInput(input, symbol, operator)
+    }
+
     return (
         <StyledCalculationButton area={area} symbol={symbol}
-                                 onClick={() => updateInput(input, symbol, operator)}>{symbol}</StyledCalculationButton>
+                                 onClick={updateHandler}>{symbol}</StyledCalculationButton>
     )
 }

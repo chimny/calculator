@@ -4,10 +4,11 @@ import {StyledNumButton} from "../../../styles/StyledNumButton";
 
 export const NumberButton = (props) => {
     const dispatch = useDispatch();
+    const {number, area} = props;
 
 
     return (
-        <StyledNumButton area={props.area}
-                         onClick={() => dispatch(addNumber(props.number))}>{props.number}</StyledNumButton>
+        <StyledNumButton area={area}
+                         onClick={() => dispatch(addNumber(number))}>{number}</StyledNumButton>
     )
 }

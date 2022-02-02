@@ -62,7 +62,7 @@ export const calculationSlice = createSlice({
             if (prevState === '') {
                 state.input = '0.'
             } else if (prevState.includes('.')) {
-                return
+
             } else {
                 state.input = prevState + '.'
             }

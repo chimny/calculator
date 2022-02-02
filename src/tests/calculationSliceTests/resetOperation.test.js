@@ -2,12 +2,13 @@ import reducer, {resetOperation} from '../../redux/slices/calculationSlice';
 
 test('value should stay empty', () => {
 
-    const clearedState = {   firstNumber: null,
+    const clearedState = {
+        firstNumber: null,
         operator: null,
         secondNumber: null,
         result: null,
-        input: '',}
-
+        input: '',
+    }
 
 
     const previousState = {
