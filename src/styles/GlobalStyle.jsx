@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
     & button {
+      cursor: pointer;
       font-size: 32px;
       font-weight: 700;
       border-radius: 8px;

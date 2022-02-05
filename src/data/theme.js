@@ -1,5 +1,4 @@
 const firstTheme = {
-    //containers
     themeName: 'firstTheme',
     mobileWidth: '375px',
     desktopWidth: '1440px',
@@ -25,7 +24,6 @@ const firstTheme = {
 }
 
 const secondTheme = {
-    //containers
     themeName: 'secondTheme',
     mobileWidth: '375px',
     desktopWidth: '1440px',
@@ -52,7 +50,6 @@ const secondTheme = {
 
 
 const thirdTheme = {
-    //containers
     themeName: 'thirdTheme',
     mobileWidth: '375px',
     desktopWidth: '1440px',

@@ -10,10 +10,7 @@ export const SwitchToggle = () => {
     const setThemeFunction = (theme) => dispatch(setTheme(theme));
     const activeStatus = useSelector((state => state.theme.themeName));
 
-    const themeOption = [{spanClass: 'firstOption', number: 1}, {
-        spanClass: 'secondOption',
-        number: 2
-    }, {spanClass: 'thirdOption', number: 3}]
+    const themeOption = [{spanClass: 'firstOption', number: 1}, {spanClass: 'secondOption', number: 2}, {spanClass: 'thirdOption', number: 3}];
     const themeNames = [firstTheme.themeName, secondTheme.themeName, thirdTheme.themeName];
 
     return (
