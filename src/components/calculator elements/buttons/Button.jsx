@@ -2,6 +2,7 @@
 
 
 import {StyledDelButton} from "../../../styles/StyledDelButton";
+import {StyledMathBtn} from'../../../styles/StyledMathBtn';
 import {StyledNumBtn} from '../../../styles/StyledNumBtn';
 
 export const Button = (props) => {
@@ -16,7 +17,8 @@ export const Button = (props) => {
             );
         case 'numberBtn':
         return (   <StyledNumBtn  area={area} onClick={handler}>{text}</StyledNumBtn>)
-
+        case 'calcBtn':
+            return  (   <StyledMathBtn  area={area} onClick={handler}>{text}</StyledMathBtn>)
     }
 
 
