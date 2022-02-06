@@ -29,7 +29,7 @@ console.log(theme);
             {/*@todo work general component - passing styling props*/}
             <Button handler={delHandler} text={'DEL'} fontColor={theme.clearButtonFontColor}
                     background={theme.clearButtonBackground}
-                    boxShadow={theme.clearButtonShadow} area={'DEL'}/>
+                type={'DelBtn'} area={'DEL'}/>
             {/*<DEL/>*/}
             {OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <CalculationButton symbol={mathAction} area={gridArea}
                                                                                   key={gridArea}/>)}

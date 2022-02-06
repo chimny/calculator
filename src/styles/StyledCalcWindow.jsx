@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+//@todo Zosia znalazła problem - cyfry wychodzą poza okno
 
 export const StyledCalcWindow = styled.div`
   text-align: right;
