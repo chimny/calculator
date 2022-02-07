@@ -1,7 +1,7 @@
-import {StyledDelButton} from "../../../styles/StyledDelButton";
-import {StyledMathBtn} from'../../../styles/StyledMathBtn';
-import {StyledNumBtn} from '../../../styles/StyledNumBtn';
-import {StyledClearButton} from '../../../styles/StyledClearButton';
+import {StyledDelButton} from "../../styles/StyledDelButton";
+import {StyledMathBtn} from '../../styles/StyledMathBtn';
+import {StyledNumBtn} from '../../styles/StyledNumBtn';
+import {StyledClearButton} from '../../styles/StyledClearButton';
 
 export const Button = (props) => {
     const {handler, text, area, type} = props;
