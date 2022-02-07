@@ -1,10 +1,8 @@
-import {CalculationButton} from "./buttons/CalculationButton";
-import {Reset} from "./buttons/Reset";
 import {StyledKeyboard} from "../../styles/StyledKeyboard";
 import {NUMBERS, OPERATION_SYMBOLS} from "../../data/symbols";
 import {Button} from "./buttons/Button";
 import {useDispatch, useSelector} from "react-redux";
-import {addNumber, removeNumber} from "../../redux/slices/calculationSlice";
+import {addNumber, removeNumber,resetOperation} from "../../redux/slices/calculationSlice";
 import {updateInput} from "../../utils/updateInput";
 
 export const Keyboard = () => {
@@ -18,6 +16,7 @@ export const Keyboard = () => {
 
     const delHandler = () => dispatch(removeNumber());
     const addNumHandler = (number) => dispatch(addNumber(number))
+    const resetHandler = () => dispatch(resetOperation());
 
 
     const theme = useSelector((state => state.theme));
@@ -34,17 +33,16 @@ export const Keyboard = () => {
             <Button handler={delHandler} text={'DEL'}
                     type={'delBtn'} area={'DEL'}/>
 
-            {/*{OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <CalculationButton symbol={mathAction} area={gridArea}*/}
-            {/*                                                                      key={gridArea}/>)}*/}
-
             {
                 OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <Button handler={() => calcHandler(mathAction)}
                                                                           text={mathAction}
                                                                           type={'calcBtn'} area={gridArea}/>)
             }
 
+            <Button handler={resetHandler} text={'Reset'}
+                    type={'resetBtn'} area={'Reset'}/>
 
-            <Reset/>
+
         </StyledKeyboard>
     )
 
