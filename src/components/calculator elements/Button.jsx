@@ -17,7 +17,9 @@ export const Button = (props) => {
             return  (   <StyledMathBtn  symbol={text} area={area} onClick={handler}>{text}</StyledMathBtn>);
 
         case 'resetBtn':
-            return  (   <StyledClearButton  symbol={text} area={area} onClick={handler}>{text}</StyledClearButton>)
+            return  (   <StyledClearButton  symbol={text} area={area} onClick={handler}>{text}</StyledClearButton>);
+        default:
+            return (   <StyledNumBtn  area={area} onClick={handler}>{text}</StyledNumBtn>);
     }
 
 

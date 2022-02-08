@@ -1,6 +1,6 @@
 import {StyledKeyboard} from "../../styles/StyledKeyboard";
-import {NUMBERS, OPERATION_SYMBOLS} from "../../data/symbols";
-import {Button} from "./buttons/Button";
+import {NUMBERS, OPERATION_SYMBOLS,ALL_SYMBOLS } from "../../data/symbols";
+import {Button} from "./Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addNumber, removeNumber,resetOperation} from "../../redux/slices/calculationSlice";
 import {updateInput} from "../../utils/updateInput";
@@ -41,6 +41,15 @@ export const Keyboard = () => {
 
             <Button handler={resetHandler} text={'Reset'}
                     type={'resetBtn'} area={'Reset'}/>
+
+            {/*@todo working to have one combined function*/}
+            {ALL_SYMBOLS.map((symbol)=>{
+                const symbolType = Object.keys(symbol)[0];
+
+           return (
+               <p>{symbolType}</p>
+           )
+            })}
 
 
         </StyledKeyboard>
