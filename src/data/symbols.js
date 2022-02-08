@@ -21,18 +21,10 @@ const OPERATION_SYMBOLS = [{
     mathAction: '.', gridArea: 'dot'
 }];
 
-const OTHER_SYMBOLS = [{
-    symbol: 'DEL', gridArea: 'DEL'
-}, {
-    symbol: 'Reset', gridArea: 'Reset'
-},
 
-]
-
-const ALL_SYMBOLS = NUMBERS.concat(OPERATION_SYMBOLS,OTHER_SYMBOLS);
 
 
 
 module.exports = {
-    NUMBERS, OPERATION_SYMBOLS, OTHER_SYMBOLS,ALL_SYMBOLS
+    NUMBERS, OPERATION_SYMBOLS
 }
