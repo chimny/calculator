@@ -5,27 +5,12 @@ export const CalcWindow = () => {
 
     const {firstNumber, operator, secondNumber, result, input} = useSelector((state => state.calculator));
 
-    let activeInputView;
-    let equalSignVisible;
-
-
-    if (result) {
-        equalSignVisible = <span>=</span>;
-        activeInputView = <span>{result}</span>;
-    } else {
-        equalSignVisible = null;
-        activeInputView = <span>{input}</span>;
-    }
-
-
     return (
 
         <StyledCalcWindow>
-            <p>{firstNumber} {operator} {secondNumber} {equalSignVisible}</p>
-            <p> {activeInputView}</p>
-
+            <p>{firstNumber} {operator} {secondNumber} {result ? '=' : null}</p>
+            <p> {result ?? input}</p>
         </StyledCalcWindow>
-
 
     )
 }

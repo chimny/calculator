@@ -19,30 +19,22 @@ export const Keyboard = () => {
     const resetHandler = () => dispatch(resetOperation());
 
 
-    return (
-        <StyledKeyboard>
-            {/*num buttons below*/}
-            {
-                NUMBERS.map(({num, gridArea}) => <Button handler={() => addNumHandler(num)} text={num}
-                                                         type={'numberBtn'} area={gridArea}/>)
-            }
-            {/*del button below*/}
-            <Button handler={delHandler} text={'DEL'}
-                    type={'delBtn'} area={'DEL'}/>
+    return (<StyledKeyboard>
+        {/*num buttons below*/}
+        {NUMBERS.map(({num, gridArea}) => <Button handler={() => addNumHandler(num)} text={num}
+                                                  type={'numberBtn'} area={gridArea}/>)}
+        {/*del button below*/}
+        <Button handler={delHandler} text={'DEL'}
+                type={'delBtn'} area={'DEL'}/>
 
-            {
-                OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <Button handler={() => calcHandler(mathAction)}
-                                                                          text={mathAction}
-                                                                          type={'calcBtn'} area={gridArea}/>)
-            }
+        {OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <Button handler={() => calcHandler(mathAction)}
+                                                                   text={mathAction}
+                                                                   type={'calcBtn'} area={gridArea}/>)}
 
-            <Button handler={resetHandler} text={'Reset'}
-                    type={'resetBtn'} area={'Reset'}/>
+        <Button handler={resetHandler} text={'Reset'}
+                type={'resetBtn'} area={'Reset'}/>
 
 
-
-
-        </StyledKeyboard>
-    )
+    </StyledKeyboard>)
 
 }

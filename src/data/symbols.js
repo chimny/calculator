@@ -22,9 +22,6 @@ const OPERATION_SYMBOLS = [{
 }];
 
 
-
-
-
 module.exports = {
     NUMBERS, OPERATION_SYMBOLS
 }
