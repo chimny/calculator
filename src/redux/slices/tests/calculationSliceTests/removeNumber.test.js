@@ -1,4 +1,4 @@
-import reducer, {removeNumber} from '../../redux/slices/calculationSlice';
+import reducer, {removeNumber} from '../../calculationSlice';
 
 
 test('last number should be deleted', () => {

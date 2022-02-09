@@ -1,4 +1,4 @@
-import reducer, {addNumber} from '../../redux/slices/calculationSlice';
+import reducer, {addNumber} from '../../calculationSlice';
 
 
 test('input should not be updated', () => {

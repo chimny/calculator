@@ -1,4 +1,4 @@
-import reducer, {addOperator} from "../../redux/slices/calculationSlice";
+import reducer, {addOperator} from "../../calculationSlice";
 
 test('addOperator reducer should update firstNumber with result value, and operator from action payload. All other values should be cleared', () => {
 

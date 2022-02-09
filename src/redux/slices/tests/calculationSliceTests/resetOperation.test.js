@@ -1,4 +1,4 @@
-import reducer, {resetOperation} from '../../redux/slices/calculationSlice';
+import reducer, {resetOperation} from '../../calculationSlice';
 
 test('value should stay empty', () => {
 

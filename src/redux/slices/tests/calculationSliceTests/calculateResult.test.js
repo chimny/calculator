@@ -1,4 +1,4 @@
-import reducer, {calculateResult} from "../../redux/slices/calculationSlice";
+import reducer, {calculateResult} from "../../calculationSlice";
 
 test('it should give result 13', () => {
 

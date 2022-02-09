@@ -1,4 +1,4 @@
-import reducer, {addDot} from '../../redux/slices/calculationSlice';
+import reducer, {addDot} from '../../calculationSlice';
 
 test('if the dot is triggered and the input is empty, the zero should append as default', () => {
 
