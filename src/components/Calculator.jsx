@@ -6,8 +6,7 @@ import {CalcHeader} from "./calculator elements/CalcHeader";
 export const Calculator = () => {
 
 
-    return (
-        <StyledCalculator>
+    return (<StyledCalculator>
 
             <CalcHeader/>
             <CalcWindow/>

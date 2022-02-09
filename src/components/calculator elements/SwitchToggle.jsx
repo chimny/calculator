@@ -6,11 +6,12 @@ import {firstTheme, secondTheme, thirdTheme} from '../../data/theme';
 export const SwitchToggle = () => {
 
     const dispatch = useDispatch();
-
     const setThemeFunction = (theme) => dispatch(setTheme(theme));
     const activeStatus = useSelector((state => state.theme.themeName));
 
-    const themeOption = [{spanClass: 'firstOption', number: 1}, {spanClass: 'secondOption', number: 2}, {spanClass: 'thirdOption', number: 3}];
+    const themeOption = [{spanClass: 'firstOption', number: 1}, {
+        spanClass: 'secondOption', number: 2
+    }, {spanClass: 'thirdOption', number: 3}];
     const themeNames = [firstTheme.themeName, secondTheme.themeName, thirdTheme.themeName];
 
     return (
@@ -23,16 +24,13 @@ export const SwitchToggle = () => {
             <div className='switchBox'>
 
                 {themeNames.map((theme) => {
-                    return (
-                        <label className='container' htmlFor={theme}>
+                    return (<label className='container' htmlFor={theme}>
                             <input id={theme} type="checkbox" checked={activeStatus === theme ?? false}
                                    onChange={() => setThemeFunction(theme)}/>
                             <span className="checkmark"></span>
-                        </label>
-                    )
+                        </label>)
                 })}
 
             </div>
-        </StyledSwitchToggle>
-    )
+        </StyledSwitchToggle>)
 };

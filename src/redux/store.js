@@ -4,7 +4,6 @@ import themeReducer from './slices/themeSlice';
 
 export const store = configureStore({
     reducer: {
-        calculator: calculationReducer,
-        theme: themeReducer,
+        calculator: calculationReducer, theme: themeReducer,
     },
 })

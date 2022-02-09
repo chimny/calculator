@@ -30,11 +30,9 @@ export const Keyboard = () => {
         {OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <Button handler={() => calcHandler(mathAction)}
                                                                    text={mathAction}
                                                                    type={'calcBtn'} area={gridArea}/>)}
-
+        {/*reset button below*/}
         <Button handler={resetHandler} text={'Reset'}
                 type={'resetBtn'} area={'Reset'}/>
-
-
     </StyledKeyboard>)
 
 }

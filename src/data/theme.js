@@ -18,9 +18,7 @@ const firstTheme = {
 
     clearButtonFontColor: 'hsl(0, 0%, 100%)',
     clearButtonBackground: 'hsl(225, 21%, 49%)',
-    // clearButtonShadow: 'hsl(224, 28%, 35%)',
-    clearButtonShadow: 'rgba(60, 80, 90)',
-
+    clearButtonShadow: 'hsl(224, 28%, 35%)',
 
 }
 
@@ -46,7 +44,6 @@ const secondTheme = {
     clearButtonBackground: 'hsl(185, 42%, 37%)',
     clearButtonShadow: 'hsl(185, 58%, 25%)',
 
-
 }
 
 
@@ -71,7 +68,6 @@ const thirdTheme = {
     clearButtonFontColor: 'hsl(0, 0%, 100%)',
     clearButtonBackground: 'hsl(281, 89%, 26%)',
     clearButtonShadow: 'hsl(285, 91%, 52%)',
-
 
 }
 

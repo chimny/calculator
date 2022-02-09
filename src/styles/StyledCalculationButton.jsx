@@ -10,5 +10,5 @@ export const StyledCalculationButton = styled.button`
   font-weight: 700;
   box-shadow: 0 3px ${({symbol, theme}) => symbol === '=' ? theme.equalButtonShadow : theme.numButtonShadow};
   grid-area: ${({area}) => area};
-  
+
 }`

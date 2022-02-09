@@ -18,7 +18,7 @@ export const StyledKeyboard = styled.div`
     grid-template-columns: repeat(4, minmax(32px, auto));
 
   }
-  
+
 
 
 `
