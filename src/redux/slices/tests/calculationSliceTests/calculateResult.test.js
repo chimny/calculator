@@ -15,7 +15,7 @@ test('it should give result 13', () => {
 });
 
 
-test('it should update values - previous result as first number, secondnumber as payload and result based on two of them', () => {
+test('it should update values - previous result as first number, secondNumber as payload and result based on two of them', () => {
 
     const previousState = {
         firstNumber: 13, operator: '+', secondNumber: 5, result: 15,

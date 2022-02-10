@@ -10,11 +10,14 @@ test('input should not be updated', () => {
         input: '',
     };
     expect(reducer(previousState, addNumber('aa'))).toEqual(
-        previousState
+        {...previousState}
     );
 
 
-})
+});
+
+
+
 
 
 test('new numbers should be added', () => {
@@ -50,7 +53,7 @@ test('zero should be replaced by new number', () => {
 })
 
 
-test('zero should be hit once if it\'s the only value ', () => {
+test('zero should be hit once if it\'s the only value', () => {
     const previousState = {
         firstNumber: null,
         operator: null,

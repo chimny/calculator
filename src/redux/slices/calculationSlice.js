@@ -6,97 +6,74 @@ const {OPERATION_SYMBOLS} = require('../../data/symbols');
 const eligibleSymbols = OPERATION_SYMBOLS.map(el => el.mathAction)
 
 const initialState = {
-    firstNumber: null,
-    operator: null,
-    secondNumber: null,
-    result: null,
-    input: '',
+    firstNumber: null, operator: null, secondNumber: null, result: null, input: '',
 };
 
 
 export const calculationSlice = createSlice({
-        name: "calculationSlice",
-        initialState,
-        reducers: {
+    name: "calculationSlice", initialState, reducers: {
 
-            addOperator(state, action) {
-                if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
-                    const {firstNumber, secondNumber, result, operator, input} = state;
-                    if (result) {
-                        return {...initialState, firstNumber: state.result, operator: action.payload}
-                    }
-                    if (!firstNumber) {
-                        return {...initialState, firstNumber: Number(state.input), operator: action.payload}
-                    }
-                    if (secondNumber === null) {
-                        if (input) {
-                            const calculation = calculateValue(firstNumber, operator, Number(input));
-                            return {...initialState, firstNumber: calculation, operator: action.payload}
-                        } else return {...initialState, firstNumber, operator: action.payload}
-                    } else if (firstNumber || firstNumber === 0) {
-                        return {...initialState, secondNumber: Number(state.input), operator: action.payload}
-                    }
+        //@todo refactor
+        addOperator(state, action) {
+            if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
+                const {firstNumber, secondNumber, result, operator, input} = state;
+                if (result) {
+                    return {...initialState, firstNumber: state.result, operator: action.payload}
                 }
-
-
-            },
-
-
-            // addOperator(state, action) {
-            //     if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
-            //         const {firstNumber, secondNumber, result, operator, input} = state;
-            //         if (result) {
-            //             return {...initialState, firstNumber: state.result, operator: action.payload}
-            //         }
-            //         if (!firstNumber) {
-            //             return {...initialState, firstNumber: Number(state.input), operator: action.payload}
-            //         } else if (secondNumber === null) {
-            //             if (input) {
-            //                 const calculation = calculateValue(firstNumber, operator, Number(input));
-            //                 return {...initialState, firstNumber: calculation, operator: action.payload}
-            //             } else return {...initialState, firstNumber, operator: action.payload}
-            //         } else if (firstNumber || firstNumber === 0) {
-            //             return {...initialState, secondNumber: Number(state.input), operator: action.payload}
-            //         }
-            //     }
-            //
-            //
-            // },
-
-            calculateResult(state, action) {
-                const {operator, result} = state;
-                if (action.payload) {
-                    state.secondNumber = Number(action.payload);
-                } else if (state.input) {
-                    state.secondNumber = Number(state.input);
-                    state.input = ''
+                if (!firstNumber) {
+                    return {...initialState, firstNumber: Number(state.input), operator: action.payload}
                 }
-                if (result || result === 0) {
-                    state.firstNumber = result;
+                if (secondNumber === null) {
+                    if (input) {
+                        const calculation = calculateValue(firstNumber, operator, Number(input));
+                        return {...initialState, firstNumber: calculation, operator: action.payload}
+                    } else return {...initialState, firstNumber, operator: action.payload}
+                } else if (firstNumber || firstNumber === 0) {
+                    return {...initialState, secondNumber: Number(state.input), operator: action.payload}
                 }
-
-                state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
-            },
-            resetOperation() {
-                return {...initialState}
-            },
-
-            addDot: (state) => {
-                const prevState = state.input;
-                if (prevState.includes('.')) return;
-                return prevState === '' ? {...state, input: '0.'} : {...state, input: prevState + '.'}
             }
 
+
+        },
+
+        //@todo refactor
+        calculateResult(state, action) {
+            const {operator, result} = state;
+            if (action.payload) {
+                state.secondNumber = Number(action.payload);
+            } else if (state.input) {
+                state.secondNumber = Number(state.input);
+                state.input = ''
+            }
+            if (result || result === 0) {
+                state.firstNumber = result;
+            }
+
+            state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
+        },
+
+        resetOperation() {
+            return {...initialState}
+        },
+
+        addDot: (state) => {
+            const prevState = state.input;
+            if (prevState.includes('.')) return;
+            return prevState === '' ? {...state, input: '0.'} : {...state, input: prevState + '.'}
         },
 
         removeNumber: (state) => {
             const prevState = state.input;
             state.input = prevState.slice(0, prevState.length - 1)
-
         },
 
-
+        //@todo refactor
         addNumber: (state, action) => {
+
+            if (!Number(action.payload)) {
+                return state
+            }
+
 
             const addedNumber = String(action.payload);
 
@@ -113,18 +90,12 @@ export const calculationSlice = createSlice({
 
             }
             return state
-        }
+        },
 
     },
-)
+},)
 
 export const {
-    inputValueAssignment,
-    addOperator,
-    calculateResult,
-    resetOperation,
-    addDot,
-    removeNumber,
-    addNumber
+    inputValueAssignment, addOperator, calculateResult, resetOperation, addDot, removeNumber, addNumber
 } = calculationSlice.actions;
 export default calculationSlice.reducer;

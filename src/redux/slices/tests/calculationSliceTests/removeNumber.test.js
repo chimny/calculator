@@ -12,7 +12,7 @@ test('last number should be deleted', () => {
     };
 
 
-    expect(reducer(previousState, removeNumber())).toEqual(
+    expect(reducer(previousState, removeNumber(undefined))).toEqual(
         {...previousState, input: '4899'}
     );
 })
@@ -28,7 +28,7 @@ test('input should stay as it is', () => {
     };
 
 
-    expect(reducer(previousState, removeNumber())).toEqual(
+    expect(reducer(previousState, removeNumber(undefined))).toEqual(
         previousState
     );
 })
