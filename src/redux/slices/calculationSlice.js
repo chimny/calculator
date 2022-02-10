@@ -67,31 +67,13 @@ export const calculationSlice = createSlice({
             state.input = prevState.slice(0, prevState.length - 1)
         },
 
-        //@todo refactor
         addNumber: (state, action) => {
-
-            if (!Number(action.payload)) {
-                return state
+            if (!Number(action.payload) && action.payload !== '0') return state;
+            if (state.result || state.input === '0') {
+                return {...initialState, input: String(action.payload)}
             }
-
-
-            const addedNumber = String(action.payload);
-
-            if (state.result) {
-                return {...initialState, input: addedNumber}
-            }
-
-            if (state.input === '0' && Number(addedNumber)) {
-                state.input = addedNumber
-            } else if (Number(addedNumber)) {
-                state.input += addedNumber
-            } else if (addedNumber === '0' && state.input !== '0') {
-                state.input += addedNumber
-
-            }
-            return state
+            state.input += String(action.payload)
         },
-
     },
 },)
 
