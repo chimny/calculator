@@ -13,34 +13,31 @@ const initialState = {
 export const calculationSlice = createSlice({
     name: "calculationSlice", initialState, reducers: {
 
-        //@todo refactor
         addOperator(state, action) {
             if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
                 const {firstNumber, secondNumber, result, operator, input} = state;
+                const calculation = calculateValue(firstNumber, operator, Number(input));
                 if (result) {
                     return {...initialState, firstNumber: state.result, operator: action.payload}
                 }
-                if (!firstNumber) {
-                    return {...initialState, firstNumber: Number(state.input), operator: action.payload}
+                if (secondNumber === null && state.firstNumber !== null) {
+                    return input ? {...initialState, firstNumber: calculation, operator: action.payload} : {...initialState, firstNumber, operator: action.payload}
                 }
-                if (secondNumber === null) {
-                    if (input) {
-                        const calculation = calculateValue(firstNumber, operator, Number(input));
-                        return {...initialState, firstNumber: calculation, operator: action.payload}
-                    } else return {...initialState, firstNumber, operator: action.payload}
-                } else if (firstNumber || firstNumber === 0) {
-                    return {...initialState, secondNumber: Number(state.input), operator: action.payload}
-                }
+                return firstNumber === null ? {...initialState, firstNumber: Number(state.input), operator: action.payload} : {...initialState, secondNumber: Number(state.input), operator: action.payload}
             }
-
         },
 
 
         calculateResult(state, action) {
             const {operator, result} = state;
-            if (action.payload) {state.secondNumber = Number(action.payload);}
-            else if (state.input) {return {...state, secondNumber:Number(state.input),input:''}}
-            if (result || result === 0) {state.firstNumber = result;}
+            if (action.payload) {
+                state.secondNumber = Number(action.payload);
+            } else if (state.input) {
+                return {...state, secondNumber: Number(state.input), input: ''}
+            }
+            if (result || result === 0) {
+                state.firstNumber = result;
+            }
             state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
         },
 

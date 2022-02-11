@@ -24,8 +24,8 @@ export const SwitchToggle = () => {
             <div className='switchBox'>
 
                 {themeNames.map((theme) => {
-                    return (<label className='container' htmlFor={theme}>
-                            <input id={theme} type="checkbox" checked={activeStatus === theme ?? false}
+                    return (<label  className='container' htmlFor={theme}>
+                            <input key={theme} id={theme} type="checkbox" checked={activeStatus === theme ?? false}
                                    onChange={() => setThemeFunction(theme)}/>
                             <span className="checkmark"></span>
                         </label>)
