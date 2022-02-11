@@ -33,24 +33,17 @@ export const calculationSlice = createSlice({
                 }
             }
 
-
         },
 
-        //@todo refactor
+
         calculateResult(state, action) {
             const {operator, result} = state;
-            if (action.payload) {
-                state.secondNumber = Number(action.payload);
-            } else if (state.input) {
-                state.secondNumber = Number(state.input);
-                state.input = ''
-            }
-            if (result || result === 0) {
-                state.firstNumber = result;
-            }
-
+            if (action.payload) {state.secondNumber = Number(action.payload);}
+            else if (state.input) {return {...state, secondNumber:Number(state.input),input:''}}
+            if (result || result === 0) {state.firstNumber = result;}
             state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
         },
+
 
         resetOperation() {
             return {...initialState}
