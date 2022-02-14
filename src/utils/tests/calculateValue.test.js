@@ -1,4 +1,4 @@
-import {calculateValue} from "../../calculateValue";
+import {calculateValue} from "../calculateValue";
 
 
 test('adding', () => {

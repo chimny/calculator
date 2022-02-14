@@ -21,17 +21,17 @@ export const Keyboard = () => {
 
     return (<StyledKeyboard>
         {/*num buttons below*/}
-        {NUMBERS.map(({num, gridArea}) => <Button handler={() => addNumHandler(num)} text={num}
+        {NUMBERS.map(({num, gridArea}) => <Button key={gridArea} handler={() => addNumHandler(num)} text={num}
                                                   type={'numberBtn'} area={gridArea}/>)}
         {/*del button below*/}
-        <Button handler={delHandler} text={'DEL'}
+        <Button key={'DEL'} handler={delHandler} text={'DEL'}
                 type={'delBtn'} area={'DEL'}/>
 
-        {OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <Button handler={() => calcHandler(mathAction)}
+        {OPERATION_SYMBOLS.map(({mathAction, gridArea}) => <Button key={gridArea} handler={() => calcHandler(mathAction)}
                                                                    text={mathAction}
                                                                    type={'calcBtn'} area={gridArea}/>)}
         {/*reset button below*/}
-        <Button handler={resetHandler} text={'Reset'}
+        <Button key={'Reset'} handler={resetHandler} text={'Reset'}
                 type={'resetBtn'} area={'Reset'}/>
     </StyledKeyboard>)
 

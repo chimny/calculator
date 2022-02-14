@@ -16,7 +16,7 @@ export const calculationSlice = createSlice({
         addOperator(state, action) {
             if (eligibleSymbols.includes(action.payload) && action.payload !== '=') {
                 const {firstNumber, secondNumber, result, operator, input} = state;
-                const calculation = calculateValue(firstNumber, operator, Number(input));
+                const calculation = calculateValue(Number(firstNumber), operator, Number(input));
                 if (result) {
                     return {...initialState, firstNumber: state.result, operator: action.payload}
                 }
@@ -26,7 +26,6 @@ export const calculationSlice = createSlice({
                 return firstNumber === null ? {...initialState, firstNumber: Number(state.input), operator: action.payload} : {...initialState, secondNumber: Number(state.input), operator: action.payload}
             }
         },
-
 
         calculateResult(state, action) {
             const {operator, result} = state;
@@ -40,7 +39,6 @@ export const calculationSlice = createSlice({
             }
             state.result = calculateValue(state.firstNumber, operator, state.secondNumber)
         },
-
 
         resetOperation() {
             return {...initialState}

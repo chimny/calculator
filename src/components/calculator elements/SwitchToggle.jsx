@@ -18,16 +18,16 @@ export const SwitchToggle = () => {
 
         <StyledSwitchToggle>
             <h2>theme</h2>
-            {themeOption.map(({spanClass, number}) => <span className={spanClass}>{number}</span>)}
+            {themeOption.map(({spanClass, number}) => <span key={number} className={spanClass}>{number}</span>)}
 
 
             <div className='switchBox'>
 
-                {themeNames.map((theme) => {
-                    return (<label  className='container' htmlFor={theme}>
+                {themeNames.map((theme,index) => {
+                    return (<label key={index} className='container' htmlFor={theme}>
                             <input key={theme} id={theme} type="checkbox" checked={activeStatus === theme ?? false}
                                    onChange={() => setThemeFunction(theme)}/>
-                            <span className="checkmark"></span>
+                            <span  className="checkmark"></span>
                         </label>)
                 })}
 
