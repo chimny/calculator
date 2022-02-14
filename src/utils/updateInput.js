@@ -2,7 +2,6 @@ import {addOperator, calculateResult, addDot, removeNumber} from "../redux/slice
 import {store} from "../redux/store";
 
 
-//@todo add test for this function
 export function updateInput(currentInput, symbol, operator) {
 
     const dispatch = (action) => {
