@@ -60,6 +60,7 @@ export const calculationSlice = createSlice({
             if (state.result || state.input === '0') {
                 return {...initialState, input: String(action.payload)}
             }
+            if (state.input.length > 45) return
             state.input += String(action.payload)
         },
     },
